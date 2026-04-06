@@ -16,6 +16,8 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **ncdu** | Disk usage analyzer with an ncurses interface. | Layered | `dnf install ncdu` | `apt install ncdu` | `pacman -S ncdu` | [ncdu](https://dev.yorhel.nl/ncdu) |
 | **dust** | A more intuitive version of `du`, written in Rust. | Bin Injected | `dnf install dust` | *Bin* | `pacman -S dust` | [dust](https://github.com/bootandy/dust) |
 | **broot** *(added)* | A new way to see and navigate directory trees. | Bin Injected | `dnf install broot` | *Bin* | `pacman -S broot` | [broot](https://github.com/Canop/broot) |
+| **p7zip / unzip** | Essential archiving and extraction tools. | Layered | `dnf install p7zip unzip` | `apt install p7zip-full unzip` | `pacman -S p7zip unzip` | [p7zip](#) |
+| **zstd** | Zstandard - Fast real-time compression algorithm. | Layered | `dnf install zstd` | `apt install zstd` | `pacman -S zstd` | [zstd](https://github.com/facebook/zstd) |
 
 ## 2. Text & Search Tools
 
@@ -44,6 +46,13 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **usbutils** | Linux USB utilities (`lsusb`). | Layered | `dnf install usbutils` | `apt install usbutils` | `pacman -S usbutils` | [usbutils](#) |
 | **pciutils** | Linux PCI utilities (`lspci`). | Layered | `dnf install pciutils` | `apt install pciutils` | `pacman -S pciutils` | [pciutils](#) |
 | **pcp** | Performance Co-Pilot for system level performance monitoring. | Layered | `dnf install pcp` | `apt install pcp` | `pacman -S pcp` | [pcp](#) |
+| **smartmontools** | Control and monitor storage systems using S.M.A.R.T. | Layered | `dnf install smartmontools`| `apt install smartmontools`| `pacman -S smartmontools`| [smartmontools](https://www.smartmontools.org/) |
+| **nvme-cli** | NVM-Express user space tooling for Linux. | Layered | `dnf install nvme-cli` | `apt install nvme-cli` | `pacman -S nvme-cli` | [nvme-cli](#) |
+| **lm_sensors** | Tools to read hardware sensors. | Layered | `dnf install lm_sensors` | `apt install lm-sensors` | `pacman -S lm_sensors` | [lm_sensors](#) |
+| **lsof** | Utility to list open files. | Layered | `dnf install lsof` | `apt install lsof` | `pacman -S lsof` | [lsof](#) |
+| **strace** | Diagnostic, debugging and userspace utility. | Layered | `dnf install strace` | `apt install strace` | `pacman -S strace` | [strace](#) |
+| **iotop** | A top utility for I/O. | Layered | `dnf install iotop` | `apt install iotop` | `pacman -S iotop` | [iotop](#) |
+| **gnupg** | GNU Privacy Guard (GPG). | Layered | `dnf install gnupg2` | `apt install gnupg` | `pacman -S gnupg` | [gnupg](#) |
 
 ## 4. Shell, Terminal & Environment
 
@@ -78,6 +87,10 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **firewalld** | Firewall daemon with D-Bus interface. | Layered | `dnf install firewalld` | `apt install firewalld` | `pacman -S firewalld` | [firewalld](#) |
 | **tailscale** | Zero config VPN. | Layered | *Repo* | *Repo* | `pacman -S tailscale` | [tailscale](#) |
 | **wireguard-tools** | Fast, modern, secure VPN tunnel. | Layered | `dnf install wireguard-tools`| `apt install wireguard-tools`| `pacman -S wireguard-tools`| [wireguard](#) |
+| **nmap** | Network exploration tool and security / port scanner. | Layered | `dnf install nmap` | `apt install nmap` | `pacman -S nmap` | [nmap](#) |
+| **mtr** | Network diagnostic tool (combines ping and traceroute). | Layered | `dnf install mtr` | `apt install mtr` | `pacman -S mtr` | [mtr](#) |
+| **netcat / socat** | Read/write data across network connections. | Layered | `dnf install nmap-ncat socat`| `apt install netcat-openbsd socat`| `pacman -S netcat socat`| [socat](#) |
+| **tcpdump** | Powerful command-line packet analyzer. | Layered | `dnf install tcpdump` | `apt install tcpdump` | `pacman -S tcpdump` | [tcpdump](#) |
 
 ## 6. Development, Git & Containers
 
@@ -98,6 +111,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **go** | The Go programming language. | Container | `dnf install golang` | `apt install golang` | `pacman -S go` | [go](https://golang.org/) |
 | **python** | The Python programming language. | Layered | `dnf install python3` | `apt install python3` | `pacman -S python` | [python](https://www.python.org/) |
 | **ruby** | The Ruby programming language. | Container/Layered| `dnf install ruby` | `apt install ruby` | `pacman -S ruby` | [ruby](https://www.ruby-lang.org/) |
+| **android-tools** | Android SDK Platform-Tools (`adb` and `fastboot`). | Layered | `dnf install android-tools`| `apt install adb fastboot` | `pacman -S android-tools` | [android-tools](#) |
 
 ## 7. Media, Extras & Fun
 
