@@ -18,3 +18,13 @@ This project follows a standard layout for customizing immutable Linux distribut
 1. Add your Butane configurations inside `config/butane/`.
 2. Place custom files inside `rootfs/`.
 3. Use your build scripts to generate the custom CoreOS image.
+
+## Barbarous Editions
+
+The distribution is carefully designed with multiple purpose-built editions tailored for specific use cases:
+
+* **Barbarous Core** (Minimal)
+* **Barbarous Station** (Desktop)
+* **Barbarous Studio** (Creative/PKM)
+* **Barbarous Edge** (IoT)
+* **Barbarous Lab** (Dev/Net)
