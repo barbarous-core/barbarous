@@ -1,0 +1,42 @@
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/yum.repos.d/rpmfusion-free.repo",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/0zNu4rDMBCF4V5PocJsJ3u3WlgYtnMXCGlDCGPryBa2LoyUkMcPNiSkG4bD958lB3crPkXjBLioyAF0Oh50v3+1S6J72CSsG8EKLrhDtNG9ACqg8urjQnOtufx1XfAiSUr7ZtskU/ea/Qtyoi1k3G6aD/OLZZypGbhguxQiDyss/ewVy5WveGQvoF+rpjyNM8aFvtUzAAD//11PzSPDAAAA"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/yum.repos.d/rpmfusion-nonfree.repo",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/0yNy6rCMBiE93mKLMrZpT2uBCG4604RtyLyt5m0oc2FP1F8fLFecDcwM9934uTtNbsYVIjBMnAWgTz08bCT7VJIG1m2MJFJVowZlHEDSyX3r4fwKDS7MOmxlJQ3TeMdc+Rcf+F15KH5zLaMFPVbp+xCVj/kP+J+1FVHGc8kEKibYfRqERkqdME9OYZeGzGkoR/RT/pfPAIAAP//UNrQG8wAAAA="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/yum.repos.d/zfs.repo",
+        "contents": {
+          "compression": "",
+          "source": "data:,%5Bzfs%5D%0Aname%3DZFS%20on%20Linux%20for%20Fedora%20%24releasever%0Abaseurl%3Dhttp%3A%2F%2Fdownload.zfsonlinux.org%2Ffedora%2F%24releasever%2F%24basearch%2F%0Aenabled%3D1%0Ametadata_expire%3D7d%0Agpgcheck%3D0%0A"
+        },
+        "mode": 420
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nDescription=Layer additional packages for Barbarous Core\nAfter=network-online.target\nWants=network-online.target\nBefore=systemd-user-sessions.service\nConditionFirstBoot=yes\n\n[Service]\nType=oneshot\n# We iterate over the requested packages and only append them to the install command \n# if they are not already installed natively in the Fedora CoreOS base image to prevent failures.\nExecStart=/bin/bash -c '\\\n  PACKAGES=\"ncdu p7zip p7zip-plugins unzip zstd jq htop powertop pass stow usbutils pciutils pcp \\\n  smartmontools nvme-cli lm_sensors lsof strace iotop gnupg2 zsh tmux ncurses \\\n  wavemon firewalld wireguard-tools nmap mtr nmap-ncat socat tcpdump \\\n  podman flatpak distrobox gcc gcc-c++ make python3 ruby android-tools \\\n  ffmpeg cockpit podman-compose libvirt-client libvirt-daemon-kvm virt-install \\\n  zfs duperemove samba mergerfs nfs-utils rclone snapraid sanoid\"; \\\n  TO_INSTALL=\"\"; \\\n  for pkg in $PACKAGES; do \\\n    if ! rpm -q $pkg \u003e /dev/null 2\u003e\u00261; then \\\n      TO_INSTALL=\"$TO_INSTALL $pkg\"; \\\n    fi; \\\n  done; \\\n  if [ -n \"$TO_INSTALL\" ]; then \\\n    echo \"Installing packages: $TO_INSTALL\"; \\\n    rpm-ostree install -y --idempotent $TO_INSTALL; \\\n  else \\\n    echo \"All requested packages are already in the base OS.\"; \\\n  fi'\n\n# Reboot the system to apply the new ostree layer automatically.\nExecStartPost=/usr/bin/systemctl reboot\n\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "rpm-ostree-install.service"
+      }
+    ]
+  }
+}
