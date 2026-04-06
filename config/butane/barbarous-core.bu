@@ -1,6 +1,14 @@
 variant: fcos
 version: 1.5.0
 
+passwd:
+  users:
+    - name: barbarous
+      password_hash: "$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/"
+      groups:
+        - wheel
+
+
 storage:
   files:
     # 1. RPM Fusion Free Repository
