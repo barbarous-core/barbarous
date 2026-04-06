@@ -27,6 +27,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **yq** *(added)* | Portable command-line YAML, JSON, and XML processor. | Bin Injected | *Copr / Bin* | *Bin* | `pacman -S yq` | [yq](https://github.com/mikefarah/yq) |
 | **grex** | Generates regular expressions from user-provided test cases. | Bin Injected | `dnf install grex` | *Bin* | `pacman -S grex` | [grex](https://github.com/pemistahl/grex) |
 | **sd** *(added)* | Intuitive find & replace CLI (a modern replacement for `sed`).| Bin Injected | `dnf install sd` | *Bin* | `pacman -S sd` | [sd](https://github.com/chmln/sd) |
+| **tv** | Fuzzy search utility. | Bin Injected | *Bin* | *Bin* | *AUR* | [tv](#) |
 
 ## 3. System Management & Monitoring
 
@@ -40,6 +41,9 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **stow** | Symlink farm manager, commonly used for dotfile management. | Layered | `dnf install stow` | `apt install stow` | `pacman -S stow` | [stow](https://www.gnu.org/software/stow/) |
 | **chezmoi** | Manage your dotfiles securely across multiple machines. | Bin Injected | `dnf install chezmoi` | *Bin* | `pacman -S chezmoi` | [chezmoi](https://github.com/twpayne/chezmoi) |
 | **grub-reboot** | Sets the default boot entry for the next boot only. | Layered | *(part of grub2)* | *(part of grub)* | *(part of grub)* | *(built-in)* |
+| **usbutils** | Linux USB utilities (`lsusb`). | Layered | `dnf install usbutils` | `apt install usbutils` | `pacman -S usbutils` | [usbutils](#) |
+| **pciutils** | Linux PCI utilities (`lspci`). | Layered | `dnf install pciutils` | `apt install pciutils` | `pacman -S pciutils` | [pciutils](#) |
+| **pcp** | Performance Co-Pilot for system level performance monitoring. | Layered | `dnf install pcp` | `apt install pcp` | `pacman -S pcp` | [pcp](#) |
 
 ## 4. Shell, Terminal & Environment
 
@@ -55,6 +59,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **tealdeer** | A very fast implementation of `tldr` in Rust. | Bin Injected | `dnf install tealdeer`| *Bin* | `pacman -S tealdeer` | [tealdeer](https://github.com/tealdeer-rs/tealdeer) |
 | **brew** | Homebrew / linuxbrew package manager. | Home Dir Setup | *Curl Script* | *Curl Script* | *Curl Script* | [brew](https://brew.sh/) |
 | **ttyd** | Share your terminal over the web. | Bin Injected | `dnf install ttyd` | `apt install ttyd` | `pacman -S ttyd` | [ttyd](https://github.com/tsl0922/ttyd) |
+| **ncurses** | API/libraries for text-based user interfaces. | Layered | `dnf install ncurses` | `apt install ncurses-bin` | `pacman -S ncurses` | [ncurses](https://invisible-island.net/ncurses/) |
 
 ## 5. Networking & Internet
 
@@ -69,6 +74,10 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **newsboat** | An RSS/Atom feed reader for the text console. | Container | `dnf install newsboat`| `apt install newsboat`| `pacman -S newsboat` | [newsboat](https://github.com/newsboat/newsboat) |
 | **lynx** | Classic text-based web browser. | Container | `dnf install lynx` | `apt install lynx` | `pacman -S lynx` | [lynx](https://lynx.browser.org/) |
 | **wttr.in** | The right way to check the weather (via `curl wttr.in`). | Built-in | *N/A* | *N/A* | *N/A* | [wttr.in](https://github.com/chubin/wttr.in) |
+| **wavemon** | Ncurses-based wireless network monitor. | Layered | `dnf install wavemon` | `apt install wavemon` | `pacman -S wavemon` | [wavemon](#) |
+| **firewalld** | Firewall daemon with D-Bus interface. | Layered | `dnf install firewalld` | `apt install firewalld` | `pacman -S firewalld` | [firewalld](#) |
+| **tailscale** | Zero config VPN. | Layered | *Repo* | *Repo* | `pacman -S tailscale` | [tailscale](#) |
+| **wireguard-tools** | Fast, modern, secure VPN tunnel. | Layered | `dnf install wireguard-tools`| `apt install wireguard-tools`| `pacman -S wireguard-tools`| [wireguard](#) |
 
 ## 6. Development, Git & Containers
 
@@ -83,6 +92,12 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **distrobox** | Use any Linux distribution inside your terminal using containers.| Layered | `dnf install distrobox`| `apt install distrobox`| `pacman -S distrobox` | [distrobox](https://github.com/89luca89/distrobox) |
 | **cargo** | The Rust package manager. | Container | `dnf install cargo` | `apt install cargo` | `pacman -S rust` | [cargo](https://github.com/rust-lang/cargo) |
 | **cargo-seek** | Specialized tool for the Rust ecosystem. | Container | *cargo install* | *cargo install* | *cargo install* | [cargo-seek](#) |
+| **gcc / c / c++** | GNU Compiler Collection for C/C++. | Layered | `dnf install gcc gcc-c++` | `apt install build-essential`| `pacman -S base-devel` | [gcc](https://gcc.gnu.org/) |
+| **make** | GNU Make utility to maintain groups of programs. | Layered | `dnf install make` | `apt install make` | `pacman -S make` | [make](https://www.gnu.org/software/make/) |
+| **rust** | The Rust programming language compiler. | Container | `dnf install rust` | `apt install rustc` | `pacman -S rust` | [rust](https://www.rust-lang.org/) |
+| **go** | The Go programming language. | Container | `dnf install golang` | `apt install golang` | `pacman -S go` | [go](https://golang.org/) |
+| **python** | The Python programming language. | Layered | `dnf install python3` | `apt install python3` | `pacman -S python` | [python](https://www.python.org/) |
+| **ruby** | The Ruby programming language. | Container/Layered| `dnf install ruby` | `apt install ruby` | `pacman -S ruby` | [ruby](https://www.ruby-lang.org/) |
 
 ## 7. Media, Extras & Fun
 
@@ -102,3 +117,31 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **taproom** | Used for environment / tapping workflows. | Bin Injected | *Bin* | *Bin* | *AUR* | [taproom](#) |
 | **hygg** | Specialized utility. | Bin Injected | *Bin* | *Bin* | *AUR* | [hygg](#) |
 | **fastfetch** *(added)* | Like neofetch, but much faster because written in C. | Bin Injected | `dnf install fastfetch`| *Bin* | `pacman -S fastfetch` | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| **sl** | A joke command, prints a steam locomotive. |  Bin Injected | `dnf install sl` | `apt install sl` | `pacman -S sl` | [sl](#) |
+| **cmatrix** | Terminal based "The Matrix" like implementation. |  Bin Injected | `dnf install cmatrix` | `apt install cmatrix` | `pacman -S cmatrix` | [cmatrix](#) |
+| **pipes.sh** | Animated pipes terminal screensaver. | Bin Injected | *Script* | *Script* | `pacman -S pipes.sh` | [pipes.sh](#) |
+| **figlet** | Program for making large letters out of ordinary text. |  Bin Injected | `dnf install figlet` | `apt install figlet` | `pacman -S figlet` | [figlet](#) |
+| **toilet** | Advanced FIGlet-like generation. |  Bin Injected | `dnf install toilet` | `apt install toilet` | `pacman -S toilet` | [toilet](#) |
+| **cava** | Console-based Audio Visualizer for ALSA. |  Bin Injected | `dnf install cava` | `apt install cava` | `pacman -S cava` | [cava](#) |
+| **cacafire** | libcaca's AA-Fire port (ASCII art flame). | Bin Injected  | `dnf install caca-utils` | `apt install caca-utils` | `pacman -S libcaca` | [libcaca](#) |
+
+## 8. Storage, Server & Virtualization
+
+| Application | Description | Integration Method | Fedora (dnf) | Debian (apt) | Arch (pacman) | Repository |
+|-------------|-------------|-------------------|--------------|--------------|---------------|------------|
+| **cockpit** | Web-based system administration interface. | Layered | `dnf install cockpit` | `apt install cockpit` | `pacman -S cockpit` | [cockpit](https://cockpit-project.org/) |
+| **cockpit-zfs-manager** | ZFS manager plugin for Cockpit. | Bin Injected/Plugin| *Script* | *Script* | *AUR* | [cockpit-zfs-manager](#) |
+| **docker-buildx** | Docker CLI plugin for extended build capabilities. | Layered | `dnf install docker-buildx` | `apt install docker-buildx-plugin` | `pacman -S docker-buildx`| [docker-buildx](#) |
+| **docker-compose** | Define and run multi-container applications. | Layered/Plugin | `dnf install docker-compose-plugin`| `apt install docker-compose-plugin`| `pacman -S docker-compose` | [docker-compose](#) |
+| **podman-compose** | A script to run docker-compose.yml using Podman. | Layered | `dnf install podman-compose` | `apt install podman-compose` | `pacman -S podman-compose` | [podman-compose](#) |
+| **libvirt-client** | Client-side utilities for libvirt (`virsh`). | Layered | `dnf install libvirt-client` | `apt install libvirt-clients`| `pacman -S libvirt` | [libvirt](#) |
+| **daemon-kvm / libvirtd** | Server side daemon for KVM virtualization. | Layered | `dnf install libvirt-daemon-kvm`| `apt install libvirt-daemon-system`| `pacman -S qemu-desktop`| [qemu-kvm](#) |
+| **virt-install** | CLI tool to provision new virtual machines. | Layered | `dnf install virt-install` | `apt install virtinst` | `pacman -S virt-install` | [virt-install](#) |
+| **zfs** | OpenZFS file system driver and utilities. | Layered (Kmod) | `dnf install zfs` | `apt install zfsutils-linux` | `pacman -S zfs-linux` | [openzfs](#) |
+| **Duperemove** | Deduplication utility for Btrfs and XFS. | Layered | `dnf install duperemove` | `apt install duperemove` | `pacman -S duperemove` | [duperemove](#) |
+| **samba** | SMB/CIFS file server and client for Linux. | Layered | `dnf install samba` | `apt install samba` | `pacman -S samba` | [samba](#) |
+| **mergerfs** | Featureful union filesystem. | Layered | `dnf install mergerfs` | `apt install mergerfs` | `pacman -S mergerfs` | [mergerfs](#) |
+| **nfs-utils** | Network File System client and server utilities. | Layered | `dnf install nfs-utils` | `apt install nfs-common` | `pacman -S nfs-utils` | [nfs-utils](#) |
+| **rclone** | Rsync for cloud storage. | Layered / Bin | `dnf install rclone` | `apt install rclone` | `pacman -S rclone` | [rclone](#) |
+| **snapraid** | Backup program for disk arrays (similar to RAID). | Layered / Bin | `dnf install snapraid` | `apt install snapraid` | `pacman -S snapraid` | [snapraid](#) |
+| **sanoid** | Policy-driven snapshot management tool for ZFS. | Layered | `dnf install sanoid` | `apt install sanoid` | `pacman -S sanoid` | [sanoid](#) |
