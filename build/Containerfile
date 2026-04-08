@@ -26,3 +26,12 @@ RUN rpm-ostree override remove nfs-utils-coreos --install nfs-utils \
     libvirt-daemon-kvm virt-install duperemove samba \
     rclone snapraid \
     && ostree container commit
+
+# Configure Live User & Autologin
+RUN useradd -m -G wheel -p '$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/' barbarous \
+    && mkdir -p /etc/systemd/system/getty@tty1.service.d/ \
+    && echo -e "[Service]\nExecStart=\nExecStart=-/usr/sbin/agetty --autologin barbarous --noclear %I \$TERM" > /etc/systemd/system/getty@tty1.service.d/autologin.conf
+
+# Add a convenience alias for the installer
+RUN echo -e '#!/usr/bin/env bash\necho "🚀 Starting Barbarous Installer..."\nsudo bootc install to-disk "$@"' > /usr/bin/anaconda \
+    && chmod +x /usr/bin/anaconda

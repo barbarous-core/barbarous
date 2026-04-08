@@ -8,7 +8,14 @@ set -euo pipefail
 
 # Configuration
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso"
+# Try both anaconda-iso (bootiso/install.iso) and live-iso (iso/image.iso) paths
+if [ -f "$PROJECT_ROOT/build/iso/image.iso" ]; then
+    ISO_PATH="$PROJECT_ROOT/build/iso/image.iso"
+elif [ -f "$PROJECT_ROOT/build/bootiso/install.iso" ]; then
+    ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso"
+else
+    ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso" # Default fallback
+fi
 TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT
 

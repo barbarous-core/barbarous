@@ -4,7 +4,15 @@
 # This scripts boots the generated ISO in a QEMU virtual machine.
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso"
+
+# Try both anaconda-iso (bootiso/install.iso) and live-iso (iso/image.iso) paths
+if [ -f "$PROJECT_ROOT/build/iso/image.iso" ]; then
+    ISO_PATH="$PROJECT_ROOT/build/iso/image.iso"
+elif [ -f "$PROJECT_ROOT/build/bootiso/install.iso" ]; then
+    ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso"
+else
+    ISO_PATH="$PROJECT_ROOT/build/bootiso/install.iso" # Default fallback
+fi
 
 if [ ! -f "$ISO_PATH" ]; then
     echo "❌ Error: ISO not found at $ISO_PATH"
