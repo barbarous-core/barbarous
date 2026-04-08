@@ -23,6 +23,7 @@ sudo podman run \
   quay.io/centos-bootc/bootc-image-builder:latest \
   --type anaconda-iso \
   --rootfs xfs \
+  --anaconda-ks /output/anaconda.ks \
   localhost/barbarous-core:latest
 
 echo "==> Done! Your custom offline-ready ISO is located in the build/ directory."
