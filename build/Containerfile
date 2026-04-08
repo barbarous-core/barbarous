@@ -2,17 +2,27 @@ FROM quay.io/fedora/fedora-coreos:stable
 
 # Inject Repositories natively
 RUN echo -e "[rpmfusion-free]\nname=RPM Fusion for Fedora \$releasever - Free\nmetalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-\$releasever&arch=\$basearch\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/rpmfusion-free.repo && \
-    echo -e "[rpmfusion-nonfree]\nname=RPM Fusion for Fedora \$releasever - Nonfree\nmetalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-\$releasever&arch=\$basearch\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/rpmfusion-nonfree.repo && \
-    echo -e "[zfs]\nname=ZFS on Linux for Fedora \$releasever\nbaseurl=http://download.zfsonlinux.org/fedora/\$releasever/\$basearch/\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/zfs.repo
+    echo -e "[rpmfusion-nonfree]\nname=RPM Fusion for Fedora \$releasever - Nonfree\nmetalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-\$releasever&arch=\$basearch\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/rpmfusion-nonfree.repo
 
-# Explicitly download and install all the layered packages at build time.
-# If a package fails here, the build halts. This guarantees the ISO will never boot broken.
-RUN rpm-ostree install -y \
-    ncdu p7zip p7zip-plugins unzip zstd jq htop powertop pass stow usbutils \
-    pciutils pcp smartmontools nvme-cli lm_sensors lsof strace iotop gnupg2 \
-    zsh tmux ncurses wavemon firewalld wireguard-tools nmap mtr nmap-ncat \
-    socat tcpdump podman flatpak distrobox gcc gcc-c++ make python3 ruby \
-    android-tools ffmpeg cockpit podman-compose libvirt-client \
-    libvirt-daemon-kvm virt-install zfs duperemove samba mergerfs nfs-utils \
-    rclone snapraid sanoid \
+# Branding & Assets
+COPY assets/images/logo/logo_main.svg /usr/share/pixmaps/barbarous-logo.svg
+COPY rootfs/ /
+
+# Inject Barbarous Branding into the OS
+RUN sed -i 's/^NAME=.*/NAME="Barbarous Core"/' /etc/os-release && \
+    sed -i 's/^ID=.*/ID=barbarous/' /etc/os-release && \
+    sed -i 's/^PRETTY_NAME=.*/PRETTY_NAME="Barbarous Core (Container-Native)"/' /etc/os-release && \
+    sed -i 's/^VARIANT=.*/VARIANT="Minimalist CLI"/' /etc/os-release
+
+# Install all layered packages at build time.
+# Use override to swap CoreOS-specific NFS tools with standard ones.
+RUN rpm-ostree override remove nfs-utils-coreos --install nfs-utils \
+    && rpm-ostree install -y \
+    ncdu p7zip p7zip-plugins unzip htop powertop pass stow usbutils \
+    pcp smartmontools lm_sensors strace iotop \
+    zsh tmux firewalld nmap mtr \
+    tcpdump distrobox gcc gcc-c++ make ruby \
+    android-tools ffmpeg-free cockpit podman-compose libvirt-client \
+    libvirt-daemon-kvm virt-install duperemove samba \
+    rclone snapraid \
     && ostree container commit
