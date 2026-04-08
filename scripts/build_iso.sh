@@ -27,3 +27,8 @@ sudo podman run \
   localhost/barbarous-core:latest
 
 echo "==> Done! Your custom offline-ready ISO is located in the build/ directory."
+
+echo "==> Initializing ISO Branding (Replacing labels & volume ID)..."
+sudo "$PROJECT_ROOT/scripts/brand_iso.sh"
+
+echo "==> Build Process Finished Successfully."
