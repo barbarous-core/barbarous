@@ -139,6 +139,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **toilet** | Advanced FIGlet-like generation. |  Bin Injected | `dnf install toilet` | `apt install toilet` | `pacman -S toilet` | [toilet](#) |
 | **cava** | Console-based Audio Visualizer for ALSA. |  Bin Injected | `dnf install cava` | `apt install cava` | `pacman -S cava` | [cava](#) |
 | **cacafire** | libcaca's AA-Fire port (ASCII art flame). | Bin Injected  | `dnf install caca-utils` | `apt install caca-utils` | `pacman -S libcaca` | [libcaca](#) |
+| **jp2a** *(added)*| A small utility that converts JPEG images to ASCII. | Bin Injected | `dnf install jp2a` | `apt install jp2a` | `pacman -S jp2a` | [jp2a](https://github.com/Tebasul/jp2a) |
 
 ## 8. Storage, Server & Virtualization
 

@@ -23,6 +23,7 @@ REPOS=(
     "zellij-org/zellij"
     "mikefarah/yq"
     "Duncaen/yazi"
+    "Tebasul/jp2a"
 )
 
 echo "==> Fetching latest binaries for ${#REPOS[@]} tools..."

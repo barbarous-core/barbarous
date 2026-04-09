@@ -53,11 +53,21 @@ else
     warn "Logo not found at $LOGO_SRC"
 fi
 
-FFCONFIG_SRC="$ASSETS_DIR/fastfetch_config.jsonc"
+# Sync dotfiles structure validation
+DOTFILES_DIR="$ASSETS_DIR/dotfiles"
+FFCONFIG_SRC="$DOTFILES_DIR/fastfetch/.config/fastfetch/config.jsonc"
+ZSHCONFIG_SRC="$DOTFILES_DIR/zsh/.zshrc"
+
 if [ -f "$FFCONFIG_SRC" ]; then
-    ok "Fastfetch config: fastfetch_config.jsonc"
+    ok "Fastfetch: Modular config detected (Stow-ready)"
 else
-    warn "Fastfetch config not found — using defaults"
+    warn "Fastfetch: Modular config NOT found at $FFCONFIG_SRC"
+fi
+
+if [ -f "$ZSHCONFIG_SRC" ]; then
+    ok "Zsh: Modular config detected (Stow-ready)"
+else
+    warn "Zsh: Modular config NOT found at $ZSHCONFIG_SRC"
 fi
 
 # Count real binaries (>100KB = not a mock script)

@@ -18,15 +18,25 @@ if [ -d "./rpms" ]; then
     sudo rpm-ostree install --apply-live ./rpms/*.rpm
 fi
 
-# 3. Apply dotfiles to the current user
-echo "  -> Applying dotfiles..."
-cp ./dotfiles/.zshrc ~/
+# 3. Apply dotfiles using Stow
+if [ -d "./dotfiles" ]; then
+    echo "  -> Applying dotfiles via Stow..."
+    # We loop through each subfolder in dotfiles/ (e.g. zsh, fastfetch)
+    # and link them to the current user's $HOME.
+    for pkg in ./dotfiles/*/; do
+        pkg_name=$(basename "$pkg")
+        echo "     Installing $pkg_name..."
+        stow -d ./dotfiles -t "$HOME" "$pkg_name"
+    done
 
-# 3. Create 'barbarous' user if missing (for Live testing)
-if ! id "barbarous" &>/dev/null; then
-    echo "  -> Creating 'barbarous' user..."
-    sudo useradd -m -G wheel barbarous
-    sudo cp ./dotfiles/.zshrc /home/barbarous/
+    # Also apply to 'barbarous' user if we are currently root (live env case)
+    if [ "$USER" == "root" ] && id "barbarous" &>/dev/null; then
+        echo "     Installing to /home/barbarous..."
+        for pkg in ./dotfiles/*/; do
+            pkg_name=$(basename "$pkg")
+            sudo -u barbarous stow -d ./dotfiles -t /home/barbarous "$pkg_name"
+        done
+    fi
 fi
 
 echo "✅ Setup Complete. Type 'zsh' to reload your shell with the new config!"
