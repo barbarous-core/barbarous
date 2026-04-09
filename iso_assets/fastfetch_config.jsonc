@@ -1,0 +1,47 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/run/media/iso/barbarous-assets/barbarous_logo.txt",
+    "type": "file-raw",
+    "color": {
+      "1": "white",
+      "2": "#dc7338"
+    }
+  },
+  "display": {
+    "separator": ": "
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "terminal",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "localip",
+    "battery",
+    "locale",
+    "break",
+    "colors",
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[1;37m  ⚔  Barbarous Core \u001b[38;2;220;115;56mv1.0\u001b[0m  \u001b[90m• Forged for the CLI warrior\u001b[0m"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m  https://github.com/barbarous-core\u001b[0m"
+    }
+  ]
+}
