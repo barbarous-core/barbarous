@@ -1,37 +1,8 @@
 FROM quay.io/fedora/fedora-coreos:stable
 
-# Inject Repositories natively
-RUN echo -e "[rpmfusion-free]\nname=RPM Fusion for Fedora \$releasever - Free\nmetalink=https://mirrors.rpmfusion.org/metalink?repo=free-fedora-\$releasever&arch=\$basearch\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/rpmfusion-free.repo && \
-    echo -e "[rpmfusion-nonfree]\nname=RPM Fusion for Fedora \$releasever - Nonfree\nmetalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-\$releasever&arch=\$basearch\nenabled=1\nmetadata_expire=7d\ngpgcheck=0" > /etc/yum.repos.d/rpmfusion-nonfree.repo
+# This is a vanilla Fedora CoreOS image.
+# No custom users, branding, or services are included.
 
-# Branding & Assets
-COPY assets/images/logo/logo_main.svg /usr/share/pixmaps/barbarous-logo.svg
-COPY rootfs/ /
-
-# Inject Barbarous Branding into the OS
-RUN sed -i 's/^NAME=.*/NAME="Barbarous Core"/' /etc/os-release && \
-    sed -i 's/^ID=.*/ID=barbarous/' /etc/os-release && \
-    sed -i 's/^PRETTY_NAME=.*/PRETTY_NAME="Barbarous Core (Container-Native)"/' /etc/os-release && \
-    sed -i 's/^VARIANT=.*/VARIANT="Minimalist CLI"/' /etc/os-release
-
-# Install all layered packages at build time.
-# Use override to swap CoreOS-specific NFS tools with standard ones.
+# Replace minimal NFS tools with the standard version
 RUN rpm-ostree override remove nfs-utils-coreos --install nfs-utils \
-    && rpm-ostree install -y \
-    ncdu p7zip p7zip-plugins unzip htop powertop pass stow usbutils \
-    pcp smartmontools lm_sensors strace iotop \
-    zsh tmux firewalld nmap mtr \
-    tcpdump distrobox gcc gcc-c++ make ruby \
-    android-tools ffmpeg-free cockpit podman-compose libvirt-client \
-    libvirt-daemon-kvm virt-install duperemove samba \
-    rclone snapraid \
     && ostree container commit
-
-# Configure Live User & Autologin
-RUN useradd -m -G wheel -p '$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/' barbarous \
-    && mkdir -p /etc/systemd/system/getty@tty1.service.d/ \
-    && echo -e "[Service]\nExecStart=\nExecStart=-/usr/sbin/agetty --autologin barbarous --noclear %I \$TERM" > /etc/systemd/system/getty@tty1.service.d/autologin.conf
-
-# Add a convenience alias for the installer
-RUN echo -e '#!/usr/bin/env bash\necho "🚀 Starting Barbarous Installer..."\nsudo bootc install to-disk "$@"' > /usr/bin/anaconda \
-    && chmod +x /usr/bin/anaconda

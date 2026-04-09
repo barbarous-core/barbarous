@@ -1,0 +1,18 @@
+[Unit]
+Description=Barbarous Direct Autologin Shell
+After=systemd-user-sessions.service plymouth-quit-wait.service
+Before=getty.target
+Conflicts=getty@tty1.service
+
+[Service]
+User=barbarous
+Group=barbarous
+WorkingDirectory=/home/barbarous
+ExecStart=-/usr/bin/bash -l
+StandardInput=tty
+StandardOutput=tty
+TTYPath=/dev/tty1
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

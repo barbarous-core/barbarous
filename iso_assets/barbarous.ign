@@ -1,0 +1,31 @@
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "barbarous",
+        "passwordHash": "$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/",
+        "groups": [
+          "wheel",
+          "sudo"
+        ],
+        "shell": "/bin/bash"
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "name": "getty@tty1.service",
+        "dropins": [
+          {
+            "name": "autologin.conf",
+            "contents": "[Service]\nExecStart=\nExecStart=-/usr/sbin/agetty --autologin barbarous --noclear %I $TERM\n"
+          }
+        ]
+      }
+    ]
+  }
+}

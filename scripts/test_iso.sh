@@ -20,13 +20,14 @@ if [ ! -f "$ISO_PATH" ]; then
     exit 1
 fi
 
-echo "🚀 Booting Barbarous Core Test VM..."
+echo "🚀 Booting Barbarous Core Test VM (UEFI Mode)..."
 echo "Note: If the installer starts, you can test the 'Live' environment or complete the installation to a virtual disk."
 
 qemu-system-x86_64 \
-  -m 4G \
+  -m 8G \
   -enable-kvm \
   -cpu host \
+  -bios /usr/share/OVMF/OVMF_CODE.fd \
   -cdrom "$ISO_PATH" \
   -net nic,model=virtio -net user \
   -vga virtio \

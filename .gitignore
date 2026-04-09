@@ -1,2 +1,5 @@
 # Ignore ISO disk images
 *.iso
+iso_assets/rpms
+iso_assets/bin
+*.log
