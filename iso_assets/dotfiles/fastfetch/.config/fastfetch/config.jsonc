@@ -50,11 +50,12 @@
         },
         {
             "type": "disk",
-            "key": "  󰋊 ", // Changed icon to a disk icon
+            "key": "   ",
             "keyColor": "green",
-            // Simulates lsblk style: [Mount] [Type] [Used]/[Total] ([%])
-            "format": "{3} ({2}) ➜ {9} / {10} ({11})",
-            "folders": "/:/var/home"
+            "format": "{device} ({mountpoint}) ➜ {9} / {10} ({11})",
+            "folders": "/:/var/home:/run/media/iso",
+            "showAll": true,
+            "showExternal": true
         },
         {
             "type": "custom",
@@ -103,6 +104,43 @@
             "type": "custom",
             "format": " \u001b[90m└──────────────────────────────────────────────┘"
         },
+        {
+            "type": "custom",
+            "format": " \u001b[90m┌────────────────── Welcome ───────────────────┐"
+        },
+        {
+            "type": "custom",
+            "format": "  \u001b[34m🛸 Welcome to the Barbarous Live Environment\u001b[0m"
+        },
+        {
+            "type": "custom",
+            "format": "  Barbarous is a container-native distro"
+        },
+        {
+            "type": "custom",
+            "format": "  based on Fedora CoreOS."
+        },
+        {
+            "type": "custom",
+            "format": " \u001b[90m├───────────────── Quick Start ────────────────┤"
+        },
+        {
+            "type": "custom",
+            "format": "  Install:       \u001b[32msudo barbarous-install\u001b[0m"
+        },
+        {
+            "type": "custom",
+            "format": "  Injected Bins: \u001b[33mbarbarous-bins\u001b[0m"
+        },
+        {
+            "type": "custom",
+            "format": "  Layered Apps:  \u001b[33mbarbarous-apps\u001b[0m"
+        },
+        {
+            "type": "custom",
+            "format": " \u001b[90m└──────────────────────────────────────────────┘"
+        },
+
         "break",
         "colors"
     ]
