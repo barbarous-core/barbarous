@@ -44,6 +44,22 @@ else
     IGN_MISSING=0
 fi
 
+# Sync logo and fastfetch config from source assets
+LOGO_SRC="$PROJECT_ROOT/assets/images/logo/logo_main.txt"
+if [ -f "$LOGO_SRC" ]; then
+    cp "$LOGO_SRC" "$ASSETS_DIR/barbarous_logo.txt"
+    ok "Logo synced: barbarous_logo.txt"
+else
+    warn "Logo not found at $LOGO_SRC"
+fi
+
+FFCONFIG_SRC="$ASSETS_DIR/fastfetch_config.jsonc"
+if [ -f "$FFCONFIG_SRC" ]; then
+    ok "Fastfetch config: fastfetch_config.jsonc"
+else
+    warn "Fastfetch config not found — using defaults"
+fi
+
 # Count real binaries (>100KB = not a mock script)
 REAL_BIN_COUNT=0
 MOCK_BINS=()
