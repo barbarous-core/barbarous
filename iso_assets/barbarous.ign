@@ -2,6 +2,17 @@
   "ignition": {
     "version": "3.4.0"
   },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/profile.d/99-barbarous.sh",
+        "contents": {
+          "source": "data:text/plain;base64,IyEvYmluL2Jhc2gKIyBCYXJiYXJvdXMgQ29yZTogYWRkIElTTyBiaW5hcmllcyB0byBQQVRIIChsaXZlIGJvb3QpCmZvciBkaXIgaW4gL3J1bi9tZWRpYS9pc28vYmFyYmFyb3VzLWFzc2V0cy9iaW4gL3J1bi9tZWRpYS8qL2JhcmJhcm91cy1hc3NldHMvYmluOyBkbwogICAgaWYgWyAtZCAiJGRpciIgXSAyPi9kZXYvbnVsbDsgdGhlbgogICAgICAgIGV4cG9ydCBQQVRIPSIkZGlyOiRQQVRIIgogICAgICAgIGJyZWFrCiAgICBmaQpkb25lCiMgU2hvdyBzeXN0ZW0gaW5mbyBvbiBsb2dpbgpjb21tYW5kIC12IGZhc3RmZXRjaCAmPi9kZXYvbnVsbCAmJiBmYXN0ZmV0Y2gK"
+        },
+        "mode": 493
+      }
+    ]
+  },
   "passwd": {
     "users": [
       {
