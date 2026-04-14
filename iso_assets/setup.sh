@@ -26,7 +26,11 @@ if [ -d "./dotfiles" ]; then
     for pkg in ./dotfiles/*/; do
         pkg_name=$(basename "$pkg")
         echo "     Installing $pkg_name..."
-        stow -d ./dotfiles -t "$HOME" "$pkg_name"
+        # Remove default skel files that might block Stow (like .bashrc)
+        if [ -f "$HOME/.${pkg_name}rc" ]; then
+            rm -f "$HOME/.${pkg_name}rc"
+        fi
+        stow --restow -d ./dotfiles -t "$HOME" "$pkg_name"
     done
 
     # Also apply to 'barbarous' user if we are currently root (live env case)

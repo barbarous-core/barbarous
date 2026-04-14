@@ -110,6 +110,16 @@ fi
 # ─── Step 2: CoreOS Installer (Ignition + Boot Args) ─────────────────────────
 step "Step 2: CoreOS Installer — embedding Ignition & boot args"
 
+# Automatically compile 99-barbarous.sh into barbarous.ign if it exists!
+PROFILE_SCRIPT="$ASSETS_DIR/99-barbarous.sh"
+if [ -f "$PROFILE_SCRIPT" ] && [ "$IGN_MISSING" -eq 0 ]; then
+    echo "  -> Compiling 99-barbarous.sh into Ignition config..."
+    B64_SCRIPT=$(base64 -w 0 "$PROFILE_SCRIPT")
+    jq --arg base64 "data:text/plain;base64,$B64_SCRIPT" \
+       '(.storage.files[] | select(.path == "/etc/profile.d/99-barbarous.sh") | .contents.source) = $base64' \
+       "$IGN_FILE" > "${IGN_FILE}.tmp" && sudo mv "${IGN_FILE}.tmp" "$IGN_FILE"
+fi
+
 if [ "$IGN_MISSING" -eq 0 ]; then
     sudo coreos-installer iso customize \
         --live-ignition "$IGN_FILE" \

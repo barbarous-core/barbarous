@@ -24,8 +24,5 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# Barbarous Core: Auto-start bicon on Console/TTY
-if [ -z "$BICON_DATA_DIR" ] && [[ "$(tty)" =~ ^/dev/tty[0-9]+$ ]]; then
-    source /run/media/iso/barbarous-assets/bin/bicon
-fi
+source /run/media/iso/barbarous-assets/bin/bicon
 
