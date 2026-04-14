@@ -23,7 +23,6 @@ if [ -n "$BARBAROUS_ASSETS" ]; then
     export -f fastfetch
 
 fi
-
 # Only source bicon ONE TIME. Sourcing a script with 'exec' will destroy the shell,
 # so if the new shell sources it again without this check, it creates an infinite loop!
 if command -v bicon &>/dev/null && [ -z "$BICON_DATA_DIR" ] && [[ "$(tty)" =~ ^/dev/tty[0-9]+$ ]]; then

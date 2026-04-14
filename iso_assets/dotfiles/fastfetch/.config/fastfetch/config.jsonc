@@ -66,9 +66,10 @@
             "format": " \u001b[90m├────────────────── Software ──────────────────┤"
         },
         {
-            "type": "os",
+            "type": "custom",
             "key": "   ",
-            "keyColor": "yellow"
+            "keyColor": "yellow",
+            "format": "Barbarous CoreOS x86_64"
         },
         {
             "type": "kernel",

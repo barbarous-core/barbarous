@@ -1,0 +1,13 @@
+{
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/os-release",
+        "mode": 420,
+        "contents": {
+          "source": "oldbase64"
+        }
+      }
+    ]
+  }
+}
