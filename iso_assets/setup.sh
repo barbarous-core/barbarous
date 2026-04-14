@@ -34,7 +34,11 @@ if [ -d "./dotfiles" ]; then
         echo "     Installing to /home/barbarous..."
         for pkg in ./dotfiles/*/; do
             pkg_name=$(basename "$pkg")
-            sudo -u barbarous stow -d ./dotfiles -t /home/barbarous "$pkg_name"
+            # Remove default skel files that might block Stow (like .bashrc)
+            if [ -f "/home/barbarous/.${pkg_name}rc" ]; then
+                rm -f "/home/barbarous/.${pkg_name}rc"
+            fi
+            sudo -u barbarous stow --restow -d ./dotfiles -t /home/barbarous "$pkg_name"
         done
     fi
 fi
