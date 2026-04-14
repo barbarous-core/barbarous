@@ -5,10 +5,9 @@
             "top": 2,
             "right": 4
         },
-        // Ensure this points to the file you colorized with sed
         "source": "barbarous",
         "color": {
-            "1": "white" // Keeps the 'e' characters white
+            "1": "white"
         }
     },
     "display": {
@@ -30,7 +29,7 @@
         "separator",
         {
             "type": "custom",
-            "format": " \u001b[90m┌────────────────── Hardware ──────────────────┐"
+            "format": " \u001b[90m┌────────── Hardware - المكونات المادية ──────────┐"
         },
         {
             "type": "host",
@@ -54,7 +53,7 @@
         },
         {
             "type": "disk",
-            "key": "   ",
+            "key": "  󰋊 ",
             "keyColor": "green",
             "format": "{device} ({mountpoint}) ➜ {9} / {10} ({11})",
             "folders": "/:/var/home:/run/media/iso",
@@ -63,7 +62,7 @@
         },
         {
             "type": "custom",
-            "format": " \u001b[90m├────────────────── Software ──────────────────┤"
+            "format": " \u001b[90m├────────── Software - البرمجيات ──────────────────┤"
         },
         {
             "type": "custom",
@@ -88,7 +87,7 @@
         },
         {
             "type": "custom",
-            "format": " \u001b[90m├────────────────── Desktop ───────────────────┤"
+            "format": " \u001b[90m├────────── Desktop - سطح المكتب ─────────────────┤"
         },
         {
             "type": "de",
@@ -111,7 +110,7 @@
         },
         {
             "type": "custom",
-            "format": " \u001b[90m┌────────────────── Welcome ───────────────────┐"
+            "format": " \u001b[90m┌────────── Welcome - ترحيب ─────────────────────┐"
         },
         {
             "type": "custom",
@@ -119,27 +118,31 @@
         },
         {
             "type": "custom",
+            "format": "  \u001b[34m   مرحباً بك في بيئة Barbarous المباشرة\u001b[0m"
+        },
+        {
+            "type": "custom",
             "format": "  Barbarous is a container-native distro"
         },
         {
             "type": "custom",
-            "format": "  based on Fedora CoreOS."
+            "format": "  توزيعة تركز على الحاويات مبنية على CoreOS"
         },
         {
             "type": "custom",
-            "format": " \u001b[90m├───────────────── Quick Start ────────────────┤"
+            "format": " \u001b[90m├────────── Quick Start - البدء السريع ───────────┤"
         },
         {
             "type": "custom",
-            "format": "  Install:       \u001b[32msudo barbarous-install\u001b[0m"
+            "format": "  Install - تثبيت:   \u001b[32msudo barbarous-install\u001b[0m"
         },
         {
             "type": "custom",
-            "format": "  Injected Bins: \u001b[33mbarbarous-bins\u001b[0m"
+            "format": "  Bins - ملفات:      \u001b[33mbarbarous-bins\u001b[0m"
         },
         {
             "type": "custom",
-            "format": "  Layered Apps:  \u001b[33mbarbarous-apps\u001b[0m"
+            "format": "  Apps - تطبيقات:    \u001b[33mbarbarous-apps\u001b[0m"
         },
         {
             "type": "custom",

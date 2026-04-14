@@ -121,33 +121,6 @@ if [ -f "$PROFILE_SCRIPT" ] && [ "$IGN_MISSING" -eq 0 ]; then
        
     # Dynamically inject --noissue into the agetty autologin configuration to disable default OS banner
     sudo sed -i 's/agetty --autologin barbarous --noclear %I/agetty --autologin barbarous --noclear --noissue %I/g' "$IGN_FILE"
-
-    echo "  -> Rebranding /etc/os-release safely to Barbarous CoreOS..."
-    B64_OS_RELEASE=$(cat << 'EOF' | base64 -w 0
-NAME="Barbarous Linux"
-VERSION="43 (CoreOS)"
-ID=barbarous
-ID_LIKE=fedora
-VERSION_ID=43
-PRETTY_NAME="Barbarous CoreOS 43 (x86_64)"
-ANSI_COLOR="0;38;2;220;115;56"
-LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:barbarousproject:barbarous:43"
-HOME_URL="https://github.com/barbarous-linux"
-DOCUMENTATION_URL="https://github.com/barbarous-linux"
-SUPPORT_URL="https://github.com/barbarous-linux"
-BUG_REPORT_URL="https://github.com/barbarous-linux"
-VARIANT="CoreOS"
-VARIANT_ID=coreos
-EOF
-)
-    jq --arg base64 "data:text/plain;base64,$B64_OS_RELEASE" \
-       'if any(.storage.files[]; .path == "/etc/os-release") then
-          (.storage.files[] | select(.path == "/etc/os-release") | .contents.source) = $base64 |
-          (.storage.files[] | select(.path == "/etc/os-release") | .overwrite) = true
-        else
-          .storage.files += [{"path": "/etc/os-release", "mode": 420, "overwrite": true, "contents": {"source": $base64}}]
-        end' "$IGN_FILE" > "${IGN_FILE}.tmp" && sudo mv "${IGN_FILE}.tmp" "$IGN_FILE"
 fi
 
 if [ "$IGN_MISSING" -eq 0 ]; then
