@@ -25,6 +25,14 @@
             "type": "custom",
             "format": "            \u001b[1;32mبسم الله الرحمن الرحيم\u001b[0m"
         },
+        {
+            "type": "custom",
+            "format": "        \u001b[36mgithub.com/project-barbarous/coreos\u001b[0m"
+        },
+        {
+            "type": "custom",
+            "format": "     \u001b[90mLicense: MIT — \u001b[32mبمراعاة الأخلاق الإسلامية\u001b[0m"
+        },
         "title",
         "separator",
         {
