@@ -1,0 +1,71 @@
+{
+  "core": {
+    "name": "Barbarous Core",
+    "description": "Minimal base edition — the foundation all other editions build upon. Currently in progress.",
+    "status": "in-progress",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "butane": [
+      "editions/core/butane/live-iso.bu",
+      "editions/core/butane/barbarous-core.bu"
+    ],
+    "rpms": "iso_assets/rpms/",
+    "bin": "iso_assets/bin/",
+    "dotfiles": "iso_assets/dotfiles/",
+    "output_iso": "build/barbarous-core.iso"
+  },
+  "station": {
+    "name": "Barbarous Station",
+    "description": "Desktop edition",
+    "status": "planned",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "core_butane": ["editions/core/butane/live-iso.bu"],
+    "butane": ["editions/station/butane/"],
+    "rpms": [],
+    "files": [],
+    "output_iso": "build/barbarous-station.iso"
+  },
+  "studio": {
+    "name": "Barbarous Studio",
+    "description": "Creative/PKM edition",
+    "status": "planned",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "core_butane": ["editions/core/butane/live-iso.bu"],
+    "butane": ["editions/studio/butane/"],
+    "rpms": [],
+    "files": [],
+    "output_iso": "build/barbarous-studio.iso"
+  },
+  "edge": {
+    "name": "Barbarous Edge",
+    "description": "IoT edition",
+    "status": "planned",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "core_butane": ["editions/core/butane/live-iso.bu"],
+    "butane": ["editions/edge/butane/"],
+    "rpms": [],
+    "files": [],
+    "output_iso": "build/barbarous-edge.iso"
+  },
+  "lab": {
+    "name": "Barbarous Lab",
+    "description": "Dev/Net edition",
+    "status": "planned",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "core_butane": ["editions/core/butane/live-iso.bu"],
+    "butane": ["editions/lab/butane/"],
+    "rpms": [],
+    "files": [],
+    "output_iso": "build/barbarous-lab.iso"
+  },
+  "touch": {
+    "name": "Barbarous Touch",
+    "description": "Tablet edition",
+    "status": "planned",
+    "base_iso": "build/fedora-coreos-stable.iso",
+    "core_butane": ["editions/core/butane/live-iso.bu"],
+    "butane": ["editions/touch/butane/"],
+    "rpms": [],
+    "files": [],
+    "output_iso": "build/barbarous-touch.iso"
+  }
+}

@@ -4,26 +4,30 @@ Barbarous is a custom Linux distribution based on Fedora CoreOS.
 
 ## Project Structure
 
-This project follows a standard layout for customizing immutable Linux distributions like Fedora CoreOS:
+This project follows an edition-based layout for customizing and provisioning Fedora CoreOS images:
 
 * **`assets/`**: General project assets, images, or static files.
-* **`build/`**: The output directory for generated artifacts, such as the parsed `config.ign` files, custom ISO images, or generated SSH keys.
-* **`config/butane/`**: Stores your Butane (`.bu`) configuration files which are transpiled to Ignition configs for first-boot provisioning.
+* **`build/`**: Output directory for generated artifacts — Ignition configs, custom ISOs, or SSH keys. Also the download location for the base Fedora CoreOS ISO.
 * **`docs/`**: Project documentation, design notes, and application research checklists.
-* **`inbox/`**: A staging area for external resources, such as cloned dotfile repositories for research and integration.
-* **`iso_assets/`**: Assets specifically required for building and customizing the Live ISO (e.g., bootloader configs, custom graphics).
-* **`packages/`**: A place to store loose RPMs or specialized binaries if you plan to install packages overlaying the base image.
-* **`rootfs/`**: Contains files and directories that will be placed directly into the file system (e.g., custom configuration files in `rootfs/etc/` or static binaries in `rootfs/usr/local/bin/`).
-* **`scratch/`**: Temporary directory for experimental files, one-off scripts, or scratch data.
-* **`scripts/`**: Automation scripts for building the image, transpiling Butane configs, embedding Ignition into the Live ISO, or deploying the OS.
+* **`editions/`**: Edition-specific asset folders. **Barbarous Core is the base** — all other editions extend it. Each edition has its own subdirectory:
+  * **`editions/<name>/butane/`**: Butane `.bu` configuration files (Core's butane is inherited by all editions).
+  * **`editions/<name>/rpms/`**: RPM packages to be injected and installed on first boot.
+  * **`editions/<name>/bin/`**: Static binaries for the edition.
+  * **`editions/<name>/dotfiles/`**: Dotfiles and shell configurations.
+  * **`editions/<name>/rootfs/`**: Files placed directly into the filesystem (e.g., `rootfs/etc/`, `rootfs/usr/local/bin/`).
+* **`editions.json`**: The **master map** — declares each edition's assets, Butane sources, base ISO, and output ISO path.
+* **`inbox/`**: Staging area for external resources, such as cloned dotfile repositories for research.
+* **`iso_assets/`**: Holds the **Barbarous Core** edition's actual assets — `bin/` (static binaries), `dotfiles/`, and `rpms/` — alongside Live ISO customization files (bootloader configs, splash graphics, setup scripts).
+* **`scratch/`**: Temporary directory for experimental files and one-off scripts.
+* **`scripts/`**: Automation scripts for transpiling Butane, injecting assets, and building edition ISOs.
 
 ## Getting Started
 
-1. **Download Base Image**: Download the latest Fedora CoreOS live ISO image from the official Fedora site.
-2. **RPM Injections**: Place any required `.rpm` packages into the `packages/` directory to be overlaid onto the base image.
-3. **Binary Injections**: Add custom static binaries directly to their target path within the `rootfs/` directory (e.g., `rootfs/usr/local/bin/`).
-4. **Configurations**: Add your Butane configurations inside `config/butane/` and place any other custom system files into the corresponding paths in `rootfs/`.
-5. **Build ISO**: Execute the `scripts/inject_assets.sh` script to generate the custom CoreOS ISO, which will automatically inject the RPMs and binaries into the final image.
+1. **Download Base ISO**: Download the latest Fedora CoreOS live ISO from the [official Fedora CoreOS page](https://fedoraproject.org/coreos/download) and place it in the `build/` directory.
+2. **RPM Injections**: Place any required `.rpm` packages into `editions/<name>/rpms/`. They will be installed on first boot via a generated systemd unit.
+3. **Binary Injections**: Add custom static binaries to `editions/<name>/bin/`. They will be embedded into the Ignition config.
+4. **Configurations**: Edit the Butane configs in `editions/<name>/butane/`. All non-core editions also inherit Core's `live-iso.bu` as their base.
+5. **Build ISO**: Run `scripts/inject_assets.sh <edition>` to transpile Butane, generate the Ignition config, and embed it into the base ISO using `coreos-installer`.
 
 ## Barbarous Editions
 
