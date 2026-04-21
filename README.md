@@ -19,16 +19,22 @@ This project follows a standard layout for customizing immutable Linux distribut
 
 ## Getting Started
 
-1. **RPM Injections**: Place any required `.rpm` packages into the `packages/` directory to be overlaid onto the base image.
-2. **Binary Injections**: Add custom static binaries directly to their target path within the `rootfs/` directory (e.g., `rootfs/usr/local/bin/`).
-3. **Configurations**: Add your Butane configurations inside `config/butane/` and place any other custom system files into the corresponding paths in `rootfs/`.
-4. **Build ISO**: Execute your build scripts (located in `scripts/`) to generate the custom CoreOS ISO, which will automatically inject the RPMs and binaries into the final image.
+1. **Download Base Image**: Download the latest Fedora CoreOS live ISO image from the official Fedora site.
+2. **RPM Injections**: Place any required `.rpm` packages into the `packages/` directory to be overlaid onto the base image.
+3. **Binary Injections**: Add custom static binaries directly to their target path within the `rootfs/` directory (e.g., `rootfs/usr/local/bin/`).
+4. **Configurations**: Add your Butane configurations inside `config/butane/` and place any other custom system files into the corresponding paths in `rootfs/`.
+5. **Build ISO**: Execute the `scripts/inject_assets.sh` script to generate the custom CoreOS ISO, which will automatically inject the RPMs and binaries into the final image.
 
 ## Barbarous Editions
 
-The distribution is carefully designed with multiple purpose-built editions tailored for specific use cases:
+The distribution is carefully designed with multiple purpose-built editions tailored for specific use cases.
+
+### In Progress
 
 * **Barbarous Core** (Minimal)
+
+### Roadmap (Planned Editions)
+
 * **Barbarous Station** (Desktop)
 * **Barbarous Studio** (Creative/PKM)
 * **Barbarous Edge** (IoT)
