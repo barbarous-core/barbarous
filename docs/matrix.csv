@@ -37,6 +37,8 @@ strace,rpm,x,x,x,x,x,x
 iotop,rpm,x,x,x,x,x,x
 gnupg,rpm,x,x,x,x,x,x
 zsh,rpm,x,x,x,x,x,x
+anaconda,rpm,x,x,x,x,x,x
+anaconda-tui,rpm,x,x,x,x,x,x
 ohmyzsh,dotfile,x,x,x,x,x,x
 tmux,rpm,x,x,x,x,x,x
 Zellij,bin,x,x,x,x,x,x

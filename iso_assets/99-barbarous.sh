@@ -1,9 +1,10 @@
 #!/bin/bash
 # Barbarous Core: add ISO binaries to PATH + alias fastfetch (live boot)
 BARBAROUS_ASSETS=""
-for dir in /run/media/iso/barbarous-assets /run/media/*/barbarous-assets; do
-    if [ -d "$dir/bin" ] 2>/dev/null; then
-        export PATH="$dir/bin:${PATH:-}"
+# Look for assets on the ISO (live boot) or local disk (installed system)
+for dir in /var/lib/barbarous-assets /run/media/iso/barbarous-assets /run/media/*/barbarous-assets; do
+    if [ -d "$dir" ] 2>/dev/null; then
+        [ -d "$dir/bin" ] && export PATH="$dir/bin:${PATH:-}"
         BARBAROUS_ASSETS="$dir"
         break
     fi

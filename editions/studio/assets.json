@@ -86,6 +86,8 @@
     "iotop",
     "gnupg",
     "zsh",
+    "anaconda",
+    "anaconda-tui",
     "tmux",
     "ncurses",
     "wavemon",

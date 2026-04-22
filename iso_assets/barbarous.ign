@@ -2,48 +2,68 @@
   "ignition": {
     "version": "3.4.0"
   },
-  "storage": {
-    "files": [
-      {
-        "path": "/etc/profile.d/99-barbarous.sh",
-        "contents": {
-          "source": "data:text/plain;base64,IyEvYmluL2Jhc2gKIyBCYXJiYXJvdXMgQ29yZTogYWRkIElTTyBiaW5hcmllcyB0byBQQVRIICsgYWxpYXMgZmFzdGZldGNoIChsaXZlIGJvb3QpCkJBUkJBUk9VU19BU1NFVFM9IiIKZm9yIGRpciBpbiAvcnVuL21lZGlhL2lzby9iYXJiYXJvdXMtYXNzZXRzIC9ydW4vbWVkaWEvKi9iYXJiYXJvdXMtYXNzZXRzOyBkbwogICAgaWYgWyAtZCAiJGRpci9iaW4iIF0gMj4vZGV2L251bGw7IHRoZW4KICAgICAgICBleHBvcnQgUEFUSD0iJGRpci9iaW46JHtQQVRIOi19IgogICAgICAgIEJBUkJBUk9VU19BU1NFVFM9IiRkaXIiCiAgICAgICAgYnJlYWsKICAgIGZpCmRvbmUKCgojIEFsaWFzIGZhc3RmZXRjaCB0byBhbHdheXMgdXNlIHRoZSBCYXJiYXJldXMgbG9nbyBhbmQgY29uZmlnCmlmIFsgLW4gIiRCQVJCQVJPVVNfQVNTRVRTIiBdOyB0aGVuCiAgICBleHBvcnQgQkFSQkFST1VTX0FTU0VUUwogICAgZXhwb3J0IEZGX0NPTkZJRz0iJEJBUkJBUk9VU19BU1NFVFMvZG90ZmlsZXMvZmFzdGZldGNoLy5jb25maWcvZmFzdGZldGNoL2NvbmZpZy5qc29uYyIKICAgIGV4cG9ydCBGRl9MT0dPPSIkQkFSQkFST1VTX0FTU0VUUy9iYXJiYXJvdXNfbG9nby50eHQiCiAgICAKICAgICMgVXNlIGEgZnVuY3Rpb24gaW5zdGVhZCBvZiBhbiBhbGlhcyBzbyBpdCB3b3JrcyBpbnN0YW50bHkgaW5zaWRlIHRoaXMgc2NyaXB0CiAgICBmYXN0ZmV0Y2goKSB7CiAgICAgICAgY29tbWFuZCBmYXN0ZmV0Y2ggLS1jb25maWcgIiRGRl9DT05GSUciIC0tbG9nbyAiJEZGX0xPR08iIC0tbG9nby10eXBlIGZpbGUtcmF3IC0tbG9nby1jb2xvci0xIHdoaXRlIC0tbG9nby1jb2xvci0yICIjZGM3MzM4IiAiJEAiCiAgICB9CiAgICBleHBvcnQgLWYgZmFzdGZldGNoCgpmaQojIE9ubHkgc291cmNlIGJpY29uIE9ORSBUSU1FLiBTb3VyY2luZyBhIHNjcmlwdCB3aXRoICdleGVjJyB3aWxsIGRlc3Ryb3kgdGhlIHNoZWxsLAojIHNvIGlmIHRoZSBuZXcgc2hlbGwgc291cmNlcyBpdCBhZ2FpbiB3aXRob3V0IHRoaXMgY2hlY2ssIGl0IGNyZWF0ZXMgYW4gaW5maW5pdGUgbG9vcCEKaWYgY29tbWFuZCAtdiBiaWNvbiAmPi9kZXYvbnVsbCAmJiBbIC16ICIkQklDT05fREFUQV9ESVIiIF0gJiYgW1sgIiQodHR5KSIgPX4gXi9kZXYvdHR5WzAtOV0rJCBdXTsgdGhlbgogICAgI3NsZWVwIDUKICAgIHNvdXJjZSAiJEJBUkJBUk9VU19BU1NFVFMvYmluL2JpY29uIgpmaQoKCiMgU2hvdyBzeXN0ZW0gaW5mbyBvbiBsb2dpbgpjb21tYW5kIC12IGZhc3RmZXRjaCAmPi9kZXYvbnVsbCAmJiBbIC1uICIkQkFSQkFST1VTX0FTU0VUUyIgXSAmJiBmYXN0ZmV0Y2gKCg=="
-        },
-        "mode": 493
-      },
-      {
-        "path": "/etc/os-release",
-        "mode": 420,
-        "contents": {
-          "source": "data:text/plain;base64,TkFNRT0iQmFyYmFyb3VzIExpbnV4IgpWRVJTSU9OPSI0MyAoQ29yZU9TKSIKSUQ9YmFyYmFyb3VzCklEX0xJS0U9ZmVkb3JhClZFUlNJT05fSUQ9NDMKUFJFVFRZX05BTUU9IkJhcmJhcm91cyBDb3JlT1MgNDMgKHg4Nl82NCkiCkFOU0lfQ09MT1I9IjA7Mzg7MjsyMjA7MTE1OzU2IgpMT0dPPWZlZG9yYS1sb2dvLWljb24KQ1BFX05BTUU9ImNwZTovbzpiYXJiYXJvdXNwcm9qZWN0OmJhcmJhcm91czo0MyIKSE9NRV9VUkw9Imh0dHBzOi8vZ2l0aHViLmNvbS9iYXJiYXJvdXMtbGludXgiCkRPQ1VNRU5UQVRJT05fVVJMPSJodHRwczovL2dpdGh1Yi5jb20vYmFyYmFyb3VzLWxpbnV4IgpTVVBQT1JUX1VSTD0iaHR0cHM6Ly9naXRodWIuY29tL2JhcmJhcm91cy1saW51eCIKQlVHX1JFUE9SVF9VUkw9Imh0dHBzOi8vZ2l0aHViLmNvbS9iYXJiYXJvdXMtbGludXgiClZBUklBTlQ9IkNvcmVPUyIKVkFSSUFOVF9JRD1jb3Jlb3MK"
-        },
-        "overwrite": true
-      }
-    ]
-  },
   "passwd": {
     "users": [
       {
-        "name": "barbarous",
-        "passwordHash": "$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/",
         "groups": [
-          "wheel",
-          "sudo"
+          "wheel"
         ],
-        "shell": "/bin/bash"
+        "name": "barbarous",
+        "passwordHash": "$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/"
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/yum.repos.d/rpmfusion-free.repo",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/0zNu4rDMBCF4V5PocJsJ3u3WlgYtnMXCGlDCGPryBa2LoyUkMcPNiSkG4bD958lB3crPkXjBLioyAF0Oh50v3+1S6J72CSsG8EKLrhDtNG9ACqg8urjQnOtufx1XfAiSUr7ZtskU/ea/Qtyoi1k3G6aD/OLZZypGbhguxQiDyss/ewVy5WveGQvoF+rpjyNM8aFvtUzAAD//11PzSPDAAAA"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/yum.repos.d/rpmfusion-nonfree.repo",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/0yNy6rCMBiE93mKLMrZpT2uBCG4604RtyLyt5m0oc2FP1F8fLFecDcwM9934uTtNbsYVIjBMnAWgTz08bCT7VJIG1m2MJFJVowZlHEDSyX3r4fwKDS7MOmxlJQ3TeMdc+Rcf+F15KH5zLaMFPVbp+xCVj/kP+J+1FVHGc8kEKibYfRqERkqdME9OYZeGzGkoR/RT/pfPAIAAP//UNrQG8wAAAA="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/yum.repos.d/zfs.repo",
+        "contents": {
+          "compression": "",
+          "source": "data:,%5Bzfs%5D%0Aname%3DZFS%20on%20Linux%20for%20Fedora%20%24releasever%0Abaseurl%3Dhttp%3A%2F%2Fdownload.zfsonlinux.org%2Ffedora%2F%24releasever%2F%24basearch%2F%0Aenabled%3D1%0Ametadata_expire%3D7d%0Agpgcheck%3D0%0A"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/profile.d/99-barbarous.sh",
+        "contents": {
+          "compression": "",
+          "source": "data:text/plain;base64,IyEvYmluL2Jhc2gKIyBCYXJiYXJvdXMgQ29yZTogYWRkIElTTyBiaW5hcmllcyB0byBQQVRIICsgYWxpYXMgZmFzdGZldGNoIChsaXZlIGJvb3QpCkJBUkJBUk9VU19BU1NFVFM9IiIKIyBMb29rIGZvciBhc3NldHMgb24gdGhlIElTTyAobGl2ZSBib290KSBvciBsb2NhbCBkaXNrIChpbnN0YWxsZWQgc3lzdGVtKQpmb3IgZGlyIGluIC92YXIvbGliL2JhcmJhcm91cy1hc3NldHMgL3J1bi9tZWRpYS9pc28vYmFyYmFyb3VzLWFzc2V0cyAvcnVuL21lZGlhLyovYmFyYmFyb3VzLWFzc2V0czsgZG8KICAgIGlmIFsgLWQgIiRkaXIiIF0gMj4vZGV2L251bGw7IHRoZW4KICAgICAgICBbIC1kICIkZGlyL2JpbiIgXSAmJiBleHBvcnQgUEFUSD0iJGRpci9iaW46JHtQQVRIOi19IgogICAgICAgIEJBUkJBUk9VU19BU1NFVFM9IiRkaXIiCiAgICAgICAgYnJlYWsKICAgIGZpCmRvbmUKCgojIEFsaWFzIGZhc3RmZXRjaCB0byBhbHdheXMgdXNlIHRoZSBCYXJiYXJldXMgbG9nbyBhbmQgY29uZmlnCmlmIFsgLW4gIiRCQVJCQVJPVVNfQVNTRVRTIiBdOyB0aGVuCiAgICBleHBvcnQgQkFSQkFST1VTX0FTU0VUUwogICAgZXhwb3J0IEZGX0NPTkZJRz0iJEJBUkJBUk9VU19BU1NFVFMvZG90ZmlsZXMvZmFzdGZldGNoLy5jb25maWcvZmFzdGZldGNoL2NvbmZpZy5qc29uYyIKICAgIGV4cG9ydCBGRl9MT0dPPSIkQkFSQkFST1VTX0FTU0VUUy9iYXJiYXJvdXNfbG9nby50eHQiCiAgICAKICAgICMgVXNlIGEgZnVuY3Rpb24gaW5zdGVhZCBvZiBhbiBhbGlhcyBzbyBpdCB3b3JrcyBpbnN0YW50bHkgaW5zaWRlIHRoaXMgc2NyaXB0CiAgICBmYXN0ZmV0Y2goKSB7CiAgICAgICAgY29tbWFuZCBmYXN0ZmV0Y2ggLS1jb25maWcgIiRGRl9DT05GSUciIC0tbG9nbyAiJEZGX0xPR08iIC0tbG9nby10eXBlIGZpbGUtcmF3IC0tbG9nby1jb2xvci0xIHdoaXRlIC0tbG9nby1jb2xvci0yICIjZGM3MzM4IiAiJEAiCiAgICB9CiAgICBleHBvcnQgLWYgZmFzdGZldGNoCgpmaQojIE9ubHkgc291cmNlIGJpY29uIE9ORSBUSU1FLiBTb3VyY2luZyBhIHNjcmlwdCB3aXRoICdleGVjJyB3aWxsIGRlc3Ryb3kgdGhlIHNoZWxsLAojIHNvIGlmIHRoZSBuZXcgc2hlbGwgc291cmNlcyBpdCBhZ2FpbiB3aXRob3V0IHRoaXMgY2hlY2ssIGl0IGNyZWF0ZXMgYW4gaW5maW5pdGUgbG9vcCEKaWYgY29tbWFuZCAtdiBiaWNvbiAmPi9kZXYvbnVsbCAmJiBbIC16ICIkQklDT05fREFUQV9ESVIiIF0gJiYgW1sgIiQodHR5KSIgPX4gXi9kZXYvdHR5WzAtOV0rJCBdXTsgdGhlbgogICAgI3NsZWVwIDUKICAgIHNvdXJjZSAiJEJBUkJBUk9VU19BU1NFVFMvYmluL2JpY29uIgpmaQoKCiMgU2hvdyBzeXN0ZW0gaW5mbyBvbiBsb2dpbgpjb21tYW5kIC12IGZhc3RmZXRjaCAmPi9kZXYvbnVsbCAmJiBbIC1uICIkQkFSQkFST1VTX0FTU0VUUyIgXSAmJiBmYXN0ZmV0Y2gKCg=="
+        },
+        "mode": 493
       }
     ]
   },
   "systemd": {
     "units": [
       {
-        "name": "getty@tty1.service",
+        "contents": "[Unit]\nDescription=Install Local RPM Assets\nAfter=local-fs.target\nConditionPathExists=/var/lib/barbarous-assets/rpms\n[Service]\nType=oneshot\n# Pipe output directly to the primary console so it shows before login\nStandardOutput=tty\nStandardError=tty\nTTYPath=/dev/tty1\nExecStart=/usr/bin/rpm-ostree install --apply-live --idempotent /var/lib/barbarous-assets/rpms/*.rpm\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "install-assets.service"
+      },
+      {
         "dropins": [
           {
-            "name": "autologin.conf",
-            "contents": "[Service]\nExecStart=\nExecStart=-/usr/sbin/agetty --autologin barbarous --noclear --noissue %I $TERM\n"
+            "contents": "[Unit]\n# Wait for the toolkit to be ready before allowing login\nAfter=install-assets.service\n[Service]\nExecStart=\nExecStart=-/sbin/agetty --autologin barbarous --noclear --noissue %I $TERM\n",
+            "name": "autologin.conf"
           }
-        ]
+        ],
+        "name": "getty@tty1.service"
       }
     ]
   }

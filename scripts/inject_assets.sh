@@ -40,6 +40,12 @@ if [ ! -f "$IGN_FILE" ]; then
     warn "barbarous.ign not found at $IGN_FILE — Ignition will be skipped."
     IGN_MISSING=1
 else
+    # Automatically recompile Butane if the source is available
+    BUTANE_SRC="$PROJECT_ROOT/editions/core/butane/barbarous-core.bu"
+    if [ -f "$BUTANE_SRC" ]; then
+        echo "  -> Recompiling Butane: $BUTANE_SRC"
+        butane --pretty --strict "$BUTANE_SRC" > "$IGN_FILE"
+    fi
     ok "Ignition config: $IGN_FILE"
     IGN_MISSING=0
 fi

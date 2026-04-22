@@ -8,6 +8,35 @@ passwd:
       groups:
         - wheel
 
+systemd:
+  units:
+    - name: install-assets.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Install Local RPM Assets
+        After=local-fs.target
+        ConditionPathExists=/var/lib/barbarous-assets/rpms
+        [Service]
+        Type=oneshot
+        # Pipe output directly to the primary console so it shows before login
+        StandardOutput=tty
+        StandardError=tty
+        TTYPath=/dev/tty1
+        ExecStart=/usr/bin/rpm-ostree install --apply-live --idempotent /var/lib/barbarous-assets/rpms/*.rpm
+        [Install]
+        WantedBy=multi-user.target
+    - name: getty@tty1.service
+      dropins:
+        - name: autologin.conf
+          contents: |
+            [Unit]
+            # Wait for the toolkit to be ready before allowing login
+            After=install-assets.service
+            [Service]
+            ExecStart=
+            ExecStart=-/sbin/agetty --autologin barbarous --noclear %I $TERM
+
 storage:
   files:
     # 1. RPM Fusion Free Repository
@@ -45,3 +74,11 @@ storage:
           enabled=1
           metadata_expire=7d
           gpgcheck=0
+
+    # 4. Profile Script for Barbarous Core (Injected during ISO build)
+    - path: /etc/profile.d/99-barbarous.sh
+      mode: 0755
+      contents:
+        inline: |
+          # Placeholder for Barbarous Core Profile Script
+          # This content is replaced dynamically by inject_assets.sh

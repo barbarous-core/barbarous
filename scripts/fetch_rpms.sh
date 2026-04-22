@@ -5,13 +5,13 @@
 RPM_DIR="/home/mohamed/barbarous/iso_assets/rpms"
 mkdir -p "$RPM_DIR"
 
-# List of tools marked as 'Layered' or 'Container' that should be available as RPMs
-TOOLS=(
-    "ncdu" "p7zip" "p7zip-plugins" "unzip" "htop" "powertop" "pass" "stow" "usbutils"
-    "pcp" "smartmontools" "lm_sensors" "strace" "iotop" "zsh" "tmux" "firewalld"
-    "nmap" "mtr" "tcpdump" "distrobox" "gcc" "gcc-c++" "make" "ruby" "samba"
-    "rclone" "snapraid"
-)
+# Dynamically get the list of RPMs from our assets.json
+TOOLS=($(python3 scripts/get_rpm_list.py))
+
+if [ ${#TOOLS[@]} -eq 0 ]; then
+    echo "==> Error: No RPMs found in assets.json. Run generate_edition_assets.py first."
+    exit 1
+fi
 
 echo "==> Fetching RPMs and dependencies for ${#TOOLS[@]} tools..."
 
