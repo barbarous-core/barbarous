@@ -7,6 +7,7 @@ passwd:
       password_hash: "$6$s/nMrRp1SpMNsTSt$UqoutdmAD/ycT27.4KUgjVcwRCXhhoUGkhac5JY5tsW1qENwP0.nUDt3cFHbB6VT961GlecHX1QytlqcYm6Y4/"
       groups:
         - wheel
+        - sudo
 
 systemd:
   units:
@@ -39,6 +40,15 @@ systemd:
 
 storage:
   files:
+    # 0. Sudoers configuration for barbarous user
+    - path: /etc/sudoers.d/barbarous
+      mode: 0440
+      contents:
+        inline: |
+          Defaults:barbarous !secure_path
+          Defaults:barbarous env_keep += "PATH"
+          barbarous ALL=(ALL) NOPASSWD: ALL
+
     # 1. RPM Fusion Free Repository
     - path: /etc/yum.repos.d/rpmfusion-free.repo
       mode: 0644

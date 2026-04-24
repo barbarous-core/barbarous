@@ -6,6 +6,9 @@ for dir in /var/lib/barbarous-assets /run/media/iso/barbarous-assets /run/media/
     if [ -d "$dir" ] 2>/dev/null; then
         [ -d "$dir/bin" ] && export PATH="$dir/bin:${PATH:-}"
         BARBAROUS_ASSETS="$dir"
+        
+        # Make sudo preserve our locally exported PATH and expand aliases
+        alias sudo='sudo env PATH="$PATH" '
         break
     fi
 done
@@ -34,4 +37,9 @@ fi
 
 # Show system info on login
 command -v fastfetch &>/dev/null && [ -n "$BARBAROUS_ASSETS" ] && fastfetch
+
+# Launch the Barbarous TUI Installer if in a live TTY1 environment
+if [ -n "$BARBAROUS_ASSETS" ] && [ -x "$BARBAROUS_ASSETS/bin/barbarous-install-tui" ] && [[ "$(tty)" == "/dev/tty1" ]]; then
+    (cd "$BARBAROUS_ASSETS" && ./bin/barbarous-install-tui)
+fi
 

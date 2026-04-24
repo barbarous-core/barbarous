@@ -53,6 +53,8 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **strace**           | Diagnostic, debugging and userspace utility.                  | Layered            | `dnf install strace`        | `apt install strace`        | `pacman -S strace`        | [strace](#)                                      | [ ] |
 | **iotop**            | A top utility for I/O.                                        | Layered            | `dnf install iotop`         | `apt install iotop`         | `pacman -S iotop`         | [iotop](#)                                       | [ ] |
 | **gnupg**            | GNU Privacy Guard (GPG).                                      | default 43         | `dnf install gnupg2`        | `apt install gnupg`         | `pacman -S gnupg`         | [gnupg](#)                                       | [ ] |
+| **barbarous-install-tui** | Modular ncurses TUI installer for Fedora CoreOS. | Bin Injected | *N/A* | *N/A* | *N/A* | [atomic-ncurses-installer](https://github.com/barbarous-core/atomic-ncurses-installer) | [x] |
+
 
 ## 4. Shell, Terminal & Environment
 
