@@ -8,7 +8,7 @@ This project follows an edition-based layout for customizing and provisioning Fe
 
 * **`assets/`**: General project assets, images, or static files.
 * **`build/`**: Output directory for generated artifacts — Ignition configs, custom ISOs, or SSH keys. Also the download location for the base Fedora CoreOS ISO.
-* **`docs/`**: Project documentation, design notes, and application research checklists.
+* **`docs/`**: Project documentation, including the [Barbarous Core: CLI Toolkit](docs/Barbarous_Core_CLI.md) and [Barbarous Core: Dotfiles & Configuration](docs/Barbarous_Dotfiles.md) catalogs.
 * **`editions/`**: Edition-specific asset folders. **Barbarous Core is the base** — all other editions extend it. Each edition has its own subdirectory:
   * **`editions/<name>/butane/`**: Butane `.bu` configuration files (Core's butane is inherited by all editions).
   * **`editions/<name>/rpms/`**: RPM packages to be injected and installed on first boot.
@@ -17,9 +17,9 @@ This project follows an edition-based layout for customizing and provisioning Fe
   * **`editions/<name>/rootfs/`**: Files placed directly into the filesystem (e.g., `rootfs/etc/`, `rootfs/usr/local/bin/`).
 * **`editions.json`**: The **master map** — declares each edition's assets, Butane sources, base ISO, and output ISO path.
 * **`inbox/`**: Staging area for external resources, such as cloned dotfile repositories for research.
-* **`iso_assets/`**: Holds the **Barbarous Core** edition's actual assets — `bin/` (static binaries), `dotfiles/`, and `rpms/` — alongside Live ISO customization files (bootloader configs, splash graphics, setup scripts).
+* **`iso_assets/`**: Holds the **Barbarous Core** edition's actual assets — `bin/` (static binaries), `dotfiles/` (compressed community configs), and `rpms/` — alongside Live ISO customization files.
 * **`scratch/`**: Temporary directory for experimental files and one-off scripts.
-* **`scripts/`**: Automation scripts for transpiling Butane, injecting assets, and building edition ISOs.
+* **`scripts/`**: Automation scripts for transpiling Butane, injecting assets, building ISOs, and [fetching community dotfiles](scripts/fetch_dotfiles.sh).
 
 ## Getting Started
 
@@ -27,7 +27,8 @@ This project follows an edition-based layout for customizing and provisioning Fe
 2. **RPM Injections**: Place any required `.rpm` packages into `editions/<name>/rpms/`. They will be installed on first boot via a generated systemd unit.
 3. **Binary Injections**: Add custom static binaries to `editions/<name>/bin/`. They will be embedded into the Ignition config.
 4. **Configurations**: Edit the Butane configs in `editions/<name>/butane/`. All non-core editions also inherit Core's `live-iso.bu` as their base.
-5. **Build ISO**: Run `scripts/inject_assets.sh <edition>` to transpile Butane, generate the Ignition config, and embed it into the base ISO using `coreos-installer`.
+5. **Fetch Dotfiles**: Run `scripts/fetch_dotfiles.sh` to automatically download and compress the community dotfile repositories listed in the documentation catalogs.
+6. **Build ISO**: Run `scripts/inject_assets.sh <edition>` to transpile Butane, generate the Ignition config, and embed it into the base ISO using `coreos-installer`.
 
 ## Barbarous Editions
 
