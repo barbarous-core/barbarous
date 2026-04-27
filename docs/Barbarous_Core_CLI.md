@@ -30,6 +30,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **grex** | Generates regular expressions from user-provided test cases. | Bin Injected | `dnf install grex` | *Bin* | `pacman -S grex` | [grex](https://github.com/pemistahl/grex) | [ ] |
 | **sd** *(added)* | Intuitive find & replace CLI (a modern replacement for `sed`).| Bin Injected | `dnf install sd` | *Bin* | `pacman -S sd` | [sd](https://github.com/chmln/sd) | [ ] |
 | **tv** | Fuzzy search utility. | Bin Injected | *Bin* | *Bin* | *AUR* | [tv](#) | [ ] |
+| **jrnl**           | A simple CLI journal application.                            | Bin Injected       | `dnf install jrnl`           | *pip*                    | `pacman -S jrnl`         | [jrnl](https://github.com/jrnl-org/jrnl)                 | [ ] |
 
 ## 3. System Management & Monitoring
 
@@ -54,6 +55,8 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **iotop**            | A top utility for I/O.                                        | Layered            | `dnf install iotop`         | `apt install iotop`         | `pacman -S iotop`         | [iotop](#)                                       | [ ] |
 | **gnupg**            | GNU Privacy Guard (GPG).                                      | default 43         | `dnf install gnupg2`        | `apt install gnupg`         | `pacman -S gnupg`         | [gnupg](#)                                       | [ ] |
 | **barbarous-install-tui** | Modular ncurses TUI installer for Fedora CoreOS. | Bin Injected | *N/A* | *N/A* | *N/A* | [atomic-ncurses-installer](https://github.com/barbarous-core/atomic-ncurses-installer) | [x] |
+| **fastfetch**      | Like neofetch, but much faster because written in C.         | Bin Injected       | `dnf install fastfetch`      | *Bin*                    | `pacman -S fastfetch`    | [fastfetch](https://github.com/fastfetch-cli/fastfetch)  | [ ] |
+| **neofetch**       | Classic system info display script in bash.                  | Bin Injected       | `dnf install neofetch`       | `apt install neofetch`   | `pacman -S neofetch`     | [neofetch](https://github.com/dylanaraps/neofetch)       | [ ] |
 
 
 ## 4. Shell, Terminal & Environment
@@ -93,6 +96,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **mtr**             | Network diagnostic tool (combines ping and traceroute).           | Layered            | `dnf install mtr`             | `apt install mtr`                  | `pacman -S mtr`             | [mtr](#)                                                  | [ ] |
 | **netcat / socat**  | Read/write data across network connections.                       | default 43         | `dnf install nmap-ncat socat` | `apt install netcat-openbsd socat` | `pacman -S netcat socat`    | [socat](#)                                                | [ ] |
 | **tcpdump**         | Powerful command-line packet analyzer.                            | Layered            | `dnf install tcpdump`         | `apt install tcpdump`              | `pacman -S tcpdump`         | [tcpdump](#)                                              | [ ] |
+| **discordo**       | A lightweight, secure Discord terminal client.               | Container          | *Bin*                        | *Bin*                    | `pacman -S discordo-git` | [discordo](https://github.com/ayn2op/discordo)           | [ ] |
 
 ## 6. Development, Git & Containers
 
@@ -114,6 +118,7 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **python**        | The Python programming language.                                  | default 43         | `dnf install python3`       | `apt install python3`         | `pacman -S python`        | [python](https://www.python.org/)                   | [ ] |
 | **ruby**          | The Ruby programming language.                                    | Container/Layered  | `dnf install ruby`          | `apt install ruby`            | `pacman -S ruby`          | [ruby](https://www.ruby-lang.org/)                  | [ ] |
 | **android-tools** | Android SDK Platform-Tools (`adb` and `fastboot`).                | Layered            | `dnf install android-tools` | `apt install adb fastboot`    | `pacman -S android-tools` | [android-tools](#)                                  | [ ] |
+| **taproom**        | Used for environment / tapping workflows.                    | Bin Injected       | *Bin*                        | *Bin*                    | *AUR*                    | [taproom](#)                                             | [ ] |
 
 ## 7. Media, Extras & Fun
 
@@ -127,14 +132,9 @@ This document catalogs the essential CLI tools selected for **Barbarous Core** (
 | **cbonsai**        | Grow terminal bonsai trees.                                  | Bin Injected       | *Bin*                        | *Bin*                    | `pacman -S cbonsai`      | [cbonsai](https://github.com/pwaller/cbonsai)            | [ ] |
 | **lolcat**         | Rainbows and unicorns for terminal output!                   | Bin Injected       | `dnf install rubygem-lolcat` | `apt install lolcat`     | `pacman -S lolcat`       | [lolcat](https://github.com/busyloop/lolcat)             | [ ] |
 | **hollywood**      | Fills your console with Hollywood melodrama technobabble.    | Container          | `dnf install hollywood`      | `apt install hollywood`  | `pacman -S hollywood`    | [hollywood](https://github.com/dustinkirkland/hollywood) | [ ] |
-| **discordo**       | A lightweight, secure Discord terminal client.               | Container          | *Bin*                        | *Bin*                    | `pacman -S discordo-git` | [discordo](https://github.com/ayn2op/discordo)           | [ ] |
-| **jrnl**           | A simple CLI journal application.                            | Bin Injected       | `dnf install jrnl`           | *pip*                    | `pacman -S jrnl`         | [jrnl](https://github.com/jrnl-org/jrnl)                 | [ ] |
 | **smassh**         | A CLI typing test tool in Python.                            | Bin Injected       | *pip*                        | *pip*                    | *AUR*                    | [smassh](https://github.com/robert-oleynik/smassh)       | [ ] |
 | **stormy**         | A beautiful TUI weather application.                         | Bin Injected       | *Bin*                        | *Bin*                    | *AUR*                    | [stormy](https://github.com/v-zhb/stormy)                | [ ] |
-| **taproom**        | Used for environment / tapping workflows.                    | Bin Injected       | *Bin*                        | *Bin*                    | *AUR*                    | [taproom](#)                                             | [ ] |
 | **hygg**           | Specialized utility.                                         | Bin Injected       | *Bin*                        | *Bin*                    | *AUR*                    | [hygg](#)                                                | [ ] |
-| **fastfetch**      | Like neofetch, but much faster because written in C.         | Bin Injected       | `dnf install fastfetch`      | *Bin*                    | `pacman -S fastfetch`    | [fastfetch](https://github.com/fastfetch-cli/fastfetch)  | [ ] |
-| **neofetch**       | Classic system info display script in bash.                  | Bin Injected       | `dnf install neofetch`       | `apt install neofetch`   | `pacman -S neofetch`     | [neofetch](https://github.com/dylanaraps/neofetch)       | [ ] |
 | **sl**             | A joke command, prints a steam locomotive.                   | Bin Injected       | `dnf install sl`             | `apt install sl`         | `pacman -S sl`           | [sl](#)                                                  | [ ] |
 | **cmatrix**        | Terminal based "The Matrix" like implementation.             | Bin Injected       | `dnf install cmatrix`        | `apt install cmatrix`    | `pacman -S cmatrix`      | [cmatrix](#)                                             | [ ] |
 | **pipes.sh**       | Animated pipes terminal screensaver.                         | Bin Injected       | *Script*                     | *Script*                 | `pacman -S pipes.sh`     | [pipes.sh](#)                                            | [ ] |

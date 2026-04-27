@@ -1,123 +1,124 @@
-Category,File,Type,Core,Station,Studio,Edge,Lab,Touch
-File Management & Navigation,eza,bin,x,x,x,x,x,x
-File Management & Navigation,lsd,bin,x,x,x,x,x,x
-File Management & Navigation,yazi,bin,x,x,x,x,x,x
-File Management & Navigation,superfile,bin,x,x,x,x,x,x
-File Management & Navigation,zoxide,bin,x,x,x,x,x,x
-File Management & Navigation,fd,bin,x,x,x,x,x,x
-File Management & Navigation,fzf,bin,x,x,x,x,x,x
-File Management & Navigation,ncdu,rpm,x,x,x,x,x,x
-File Management & Navigation,dust,bin,x,x,x,x,x,x
-File Management & Navigation,broot,bin,x,x,x,x,x,x
-File Management & Navigation,p7zip / unzip,rpm,x,x,x,x,x,x
-File Management & Navigation,zstd,rpm,x,x,x,x,x,x
-Text & Search Tools,bat,bin,x,x,x,x,x,x
-Text & Search Tools,ripgrep (rg),bin,x,x,x,x,x,x
-Text & Search Tools,jq,rpm,x,x,x,x,x,x
-Text & Search Tools,yq,bin,x,x,x,x,x,x
-Text & Search Tools,grex,bin,x,x,x,x,x,x
-Text & Search Tools,sd,bin,x,x,x,x,x,x
-Text & Search Tools,tv,bin,x,x,x,x,x,x
-System Management & Monitoring,btop,bin,x,x,x,x,x,x
-System Management & Monitoring,htop,rpm,x,x,x,x,x,x
-System Management & Monitoring,powertop,rpm,x,x,x,x,x,x
-System Management & Monitoring,bottom,bin,x,x,x,x,x,x
-System Management & Monitoring,pass,rpm,x,x,x,x,x,x
-System Management & Monitoring,stow,rpm,x,x,x,x,x,x
-System Management & Monitoring,chezmoi,bin,x,x,x,x,x,x
-System Management & Monitoring,grub-reboot,rpm,x,x,x,x,x,x
-System Management & Monitoring,usbutils,rpm,x,x,x,x,x,x
-System Management & Monitoring,pciutils,rpm,x,x,x,x,x,x
-System Management & Monitoring,pcp,rpm,x,x,x,x,x,x
-System Management & Monitoring,smartmontools,rpm,x,x,x,x,x,x
-System Management & Monitoring,nvme-cli,rpm,x,x,x,x,x,x
-System Management & Monitoring,lm_sensors,rpm,x,x,x,x,x,x
-System Management & Monitoring,lsof,rpm,x,x,x,x,x,x
-System Management & Monitoring,strace,rpm,x,x,x,x,x,x
-System Management & Monitoring,iotop,rpm,x,x,x,x,x,x
-System Management & Monitoring,gnupg,rpm,x,x,x,x,x,x
-"Shell Terminal & Environment",zsh,rpm,x,x,x,x,x,x
-"Shell Terminal & Environment",anaconda,rpm,x,x,x,x,x,x
-"Shell Terminal & Environment",anaconda-tui,rpm,x,x,x,x,x,x
-"Shell Terminal & Environment",ohmyzsh,dotfile,x,x,x,x,x,x
-"Shell Terminal & Environment",tmux,rpm,x,x,x,x,x,x
-"Shell Terminal & Environment",Zellij,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",starship,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",atuin,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",navi,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",tealdeer,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",brew,dotfile,x,x,x,x,x,x
-"Shell Terminal & Environment",ttyd,bin,x,x,x,x,x,x
-"Shell Terminal & Environment",ncurses,rpm,x,x,x,x,x,x
-Networking & Internet,bluetui,bin,x,x,x,x,x,x
-Networking & Internet,impala,bin,x,x,x,x,x,x
-Networking & Internet,croc,bin,x,x,x,x,x,x
-Networking & Internet,speedtest-cli,bin,x,x,x,x,x,x
-Networking & Internet,axel,bin,x,x,x,x,x,x
-Networking & Internet,wiremix,bin,x,x,x,x,x,x
-Networking & Internet,newsboat,bin,x,x,x,x,x,x
-Networking & Internet,lynx,bin,x,x,x,x,x,x
-Networking & Internet,wttr.in,bin,x,x,x,x,x,x
-Networking & Internet,wavemon,rpm,x,x,x,x,x,x
-Networking & Internet,firewalld,rpm,x,x,x,x,x,x
-Networking & Internet,tailscale,rpm,x,x,x,x,x,x
-Networking & Internet,wireguard-tools,rpm,x,x,x,x,x,x
-Networking & Internet,nmap,rpm,x,x,x,x,x,x
-Networking & Internet,mtr,rpm,x,x,x,x,x,x
-Networking & Internet,netcat / socat,rpm,x,x,x,x,x,x
-Networking & Internet,tcpdump,rpm,x,x,x,x,x,x
-"Development Git & Containers",neovim,bin,x,x,x,x,x,x
-"Development Git & Containers",gh,bin,x,x,x,x,x,x
-"Development Git & Containers",lazygit,bin,x,x,x,x,x,x
-"Development Git & Containers",branchlet,bin,x,x,x,x,x,x
-"Development Git & Containers",podman,rpm,x,x,x,x,x,x
-"Development Git & Containers",flatpak,rpm,x,x,x,x,x,x
-"Development Git & Containers",distrobox,rpm,x,x,x,x,x,x
-"Development Git & Containers",cargo,bin,x,x,x,x,x,x
-"Development Git & Containers",cargo-seek,bin,x,x,x,x,x,x
-"Development Git & Containers",gcc / c / c++,rpm,x,x,x,x,x,x
-"Development Git & Containers",make,rpm,x,x,x,x,x,x
-"Development Git & Containers",rust,bin,x,x,x,x,x,x
-"Development Git & Containers",go,bin,x,x,x,x,x,x
-"Development Git & Containers",python,rpm,x,x,x,x,x,x
-"Development Git & Containers",ruby,rpm,x,x,x,x,x,x
-"Development Git & Containers",android-tools,rpm,x,x,x,x,x,x
-"Media Extras & Fun",ffmpeg-free,rpm,x,x,x,x,x,x
-"Media Extras & Fun",asciinema,bin,x,x,x,x,x,x
-"Media Extras & Fun",pastel,bin,x,x,x,x,x,x
-"Media Extras & Fun",faker,bin,x,x,x,x,x,x
-"Media Extras & Fun",cbonsai,bin,x,x,x,x,x,x
-"Media Extras & Fun",lolcat,bin,x,x,x,x,x,x
-"Media Extras & Fun",hollywood,bin,x,x,x,x,x,x
-"Media Extras & Fun",discordo,bin,x,x,x,x,x,x
-"Media Extras & Fun",jrnl,bin,x,x,x,x,x,x
-"Media Extras & Fun",smassh,bin,x,x,x,x,x,x
-"Media Extras & Fun",stormy,bin,x,x,x,x,x,x
-"Media Extras & Fun",taproom,bin,x,x,x,x,x,x
-"Media Extras & Fun",hygg,bin,x,x,x,x,x,x
-"Media Extras & Fun",fastfetch,bin,x,x,x,x,x,x
-"Media Extras & Fun",neofetch,bin,x,x,x,x,x,x
-"Media Extras & Fun",sl,bin,x,x,x,x,x,x
-"Media Extras & Fun",cmatrix,bin,x,x,x,x,x,x
-"Media Extras & Fun",pipes.sh,bin,x,x,x,x,x,x
-"Media Extras & Fun",figlet,bin,x,x,x,x,x,x
-"Media Extras & Fun",toilet,bin,x,x,x,x,x,x
-"Media Extras & Fun",cava,bin,x,x,x,x,x,x
-"Media Extras & Fun",cacafire,bin,x,x,x,x,x,x
-"Media Extras & Fun",jp2a,bin,x,x,x,x,x,x
-"Storage Server & Virtualization",cockpit,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",cockpit-zfs-manager,bin,x,x,x,x,x,x
-"Storage Server & Virtualization",docker-buildx,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",docker-compose,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",podman-compose,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",libvirt-client,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",daemon-kvm / libvirtd,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",virt-install,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",zfs,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",Duperemove,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",samba,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",mergerfs,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",nfs-utils,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",rclone,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",snapraid,rpm,x,x,x,x,x,x
-"Storage Server & Virtualization",sanoid,rpm,x,x,x,x,x,x
+Category,File,Description,Type,AppType,Core,Station,Studio,Edge,Lab,Touch,Custom
+File Management & Navigation,eza,"A modern, feature-rich replacement for `ls` written in Rust.",bin,cli,x,x,x,x,x,x,
+File Management & Navigation,lsd,The next gen `ls` command with lots of colors and icons.,bin,cli,x,x,x,x,x,x,x
+File Management & Navigation,yazi,Blazing fast terminal file manager based on async I/O.,bin,cli,x,x,x,x,x,x,
+File Management & Navigation,superfile,A very fancy and modern terminal file manager.,bin,cli,x,x,x,x,x,x,
+File Management & Navigation,zoxide,A smarter `cd` command that tracks your most used directories.,bin,cli,x,x,x,x,x,x,x
+File Management & Navigation,fd,"A simple, fast and user-friendly alternative to `find`.",bin,cli,x,x,x,x,x,x,x
+File Management & Navigation,fzf,A general-purpose command-line fuzzy finder.,bin,cli,x,x,x,x,x,x,x
+File Management & Navigation,ncdu,Disk usage analyzer with an ncurses interface.,rpm,cli,x,x,x,x,x,x,x
+File Management & Navigation,dust,"A more intuitive version of `du`, written in Rust.",bin,cli,x,x,x,x,x,x,
+File Management & Navigation,broot,N/A,bin,cli,x,x,x,x,x,x,
+File Management & Navigation,p7zip / unzip,Essential archiving and extraction tools.,rpm,cli,x,x,x,x,x,x,x
+File Management & Navigation,zstd,Zstandard - Fast real-time compression algorithm.,rpm,cli,x,x,x,x,x,x,
+Text & Search Tools,bat,A `cat` clone with syntax highlighting and Git integration.,bin,cli,x,x,x,x,x,x,x
+Text & Search Tools,ripgrep (rg),Line-oriented search tool that recursively searches directories.,bin,cli,x,x,x,x,x,x,x
+Text & Search Tools,jq,A lightweight and flexible command-line JSON processor.,rpm,cli,x,x,x,x,x,x,
+Text & Search Tools,yq,N/A,bin,cli,x,x,x,x,x,x,
+Text & Search Tools,grex,Generates regular expressions from user-provided test cases.,bin,cli,x,x,x,x,x,x,x
+Text & Search Tools,sd,N/A,bin,cli,x,x,x,x,x,x,
+Text & Search Tools,tv,Fuzzy search utility.,bin,cli,x,x,x,x,x,x,
+System Management & Monitoring,btop,Visually appealing and feature-rich system resource monitor.,bin,cli,x,x,x,x,x,x,x
+System Management & Monitoring,htop,Interactive process viewer and system monitor.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,powertop,Tool to find out what programs are using your laptop's power.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,bottom,N/A,bin,cli,x,x,x,x,x,x,
+System Management & Monitoring,pass,The standard Unix password manager.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,stow,"Symlink farm manager, commonly used for dotfile management.",rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,chezmoi,Manage your dotfiles securely across multiple machines.,bin,cli,x,x,x,x,x,x,x
+System Management & Monitoring,grub-reboot,Sets the default boot entry for the next boot only.,rpm,cli,x,x,x,x,x,x,
+System Management & Monitoring,usbutils,Linux USB utilities (`lsusb`).,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,pciutils,Linux PCI utilities (`lspci`).,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,pcp,Performance Co-Pilot for system level performance monitoring.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,smartmontools,Control and monitor storage systems using S.M.A.R.T.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,nvme-cli,NVM-Express user space tooling for Linux.,rpm,cli,x,x,x,x,x,x,
+System Management & Monitoring,lm_sensors,Tools to read hardware sensors.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,lsof,Utility to list open files.,rpm,cli,x,x,x,x,x,x,
+System Management & Monitoring,strace,"Diagnostic, debugging and userspace utility.",rpm,cli,x,x,x,x,x,x,
+System Management & Monitoring,iotop,A top utility for I/O.,rpm,cli,x,x,x,x,x,x,x
+System Management & Monitoring,gnupg,GNU Privacy Guard (GPG).,rpm,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,zsh,"A powerful, interactive shell with scripting features.",rpm,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,anaconda,N/A,rpm,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,anaconda-tui,N/A,rpm,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,ohmyzsh,A delightful community-driven framework for managing zsh config.,dotfile,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,tmux,Terminal multiplexer to run multiple terminals in one screen.,rpm,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,Zellij,"A modern, highly customizable terminal workspace multiplexer.",bin,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,starship,"The minimal, blazing-fast prompt for any shell.",bin,cli,x,x,x,x,x,x,
+Shell Terminal & Environment,atuin,Replaces your shell history with an encrypted SQLite database.,bin,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,navi,An interactive cheatsheet tool for the command-line.,bin,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,tealdeer,A very fast implementation of `tldr` in Rust.,bin,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,brew,Homebrew / linuxbrew package manager.,dotfile,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,ttyd,Share your terminal over the web.,bin,cli,x,x,x,x,x,x,x
+Shell Terminal & Environment,ncurses,API/libraries for text-based user interfaces.,rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,bluetui,A TUI wrapper for `bluetoothctl` managing Bluetooth devices.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,impala,TUI for iwd (iNet Wireless Daemon) for Wi-Fi management.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,croc,Securely and easily send files from one computer to another.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,speedtest-cli,Command line interface for testing internet bandwidth.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,axel,Light command line download accelerator via multiple connections.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,wiremix,Experimental/Specialized networking tool.,bin,cli,x,x,x,x,x,x,
+Networking & Internet,newsboat,An RSS/Atom feed reader for the text console.,bin,cli,x,x,x,x,x,x,
+Networking & Internet,lynx,Classic text-based web browser.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,wttr.in,The right way to check the weather (via `curl wttr.in`).,bin,cli,x,x,x,x,x,x,
+Networking & Internet,wavemon,Ncurses-based wireless network monitor.,rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,firewalld,Firewall daemon with D-Bus interface.,rpm,cli,x,x,x,x,x,x,
+Networking & Internet,tailscale,Zero config VPN.,rpm,cli,x,x,x,x,x,x,
+Networking & Internet,wireguard-tools,"Fast, modern, secure VPN tunnel.",rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,nmap,Network exploration tool and security / port scanner.,rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,mtr,Network diagnostic tool (combines ping and traceroute).,rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,netcat / socat,Read/write data across network connections.,rpm,cli,x,x,x,x,x,x,x
+Networking & Internet,tcpdump,Powerful command-line packet analyzer.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,neovim,Highly extensible Vim-based text editor.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,gh,GitHub's official command-line tool.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,lazygit,A simple terminal UI for Git.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,branchlet,Tool to navigate and manage Git branches from the terminal.,bin,cli,x,x,x,x,x,x,
+Development Git & Containers,podman,Daemonless container engine for OCI containers.,rpm,cli,x,x,x,x,x,x,
+Development Git & Containers,flatpak,Linux application sandboxing and distribution framework.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,distrobox,Use any Linux distribution inside your terminal using containers.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,cargo,The Rust package manager.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,cargo-seek,Specialized tool for the Rust ecosystem.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,gcc / c / c++,GNU Compiler Collection for C/C++.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,make,GNU Make utility to maintain groups of programs.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,rust,The Rust programming language compiler.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,go,The Go programming language.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,python,The Python programming language.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,ruby,The Ruby programming language.,rpm,cli,x,x,x,x,x,x,x
+Development Git & Containers,android-tools,Android SDK Platform-Tools (`adb` and `fastboot`).,rpm,cli,x,x,x,x,x,x,x
+Media Extras & Fun,ffmpeg-free,"A complete, cross-platform solution to record/convert media.",rpm,cli,x,x,x,x,x,x,x
+Media Extras & Fun,mpv,"Free, open source, and cross-platform media player.",rpm,cli,x,x,x,x,x,x,x
+Media Extras & Fun,asciinema,Record and share terminal sessions easily.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,pastel,"Command-line tool to generate, analyze, and convert colors.",bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,faker,Library to generate fake data.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,cbonsai,Grow terminal bonsai trees.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,lolcat,Rainbows and unicorns for terminal output!,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,hollywood,Fills your console with Hollywood melodrama technobabble.,bin,cli,x,x,x,x,x,x,x
+Networking & Internet,discordo,"A lightweight, secure Discord terminal client.",bin,cli,x,x,x,x,x,x,
+Text & Search Tools,jrnl,A simple CLI journal application.,bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,smassh,A CLI typing test tool in Python.,bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,stormy,A beautiful TUI weather application.,bin,cli,x,x,x,x,x,x,x
+Development Git & Containers,taproom,Used for environment / tapping workflows.,bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,hygg,Specialized utility.,bin,cli,x,x,x,x,x,x,
+System Management & Monitoring,fastfetch,"Like neofetch, but much faster because written in C.",bin,cli,x,x,x,x,x,x,x
+System Management & Monitoring,neofetch,Classic system info display script in bash.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,sl,"A joke command, prints a steam locomotive.",bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,cmatrix,"Terminal based ""The Matrix"" like implementation.",bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,pipes.sh,Animated pipes terminal screensaver.,bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,figlet,Program for making large letters out of ordinary text.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,toilet,Advanced FIGlet-like generation.,bin,cli,x,x,x,x,x,x,
+Media Extras & Fun,cava,Console-based Audio Visualizer for ALSA.,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,cacafire,libcaca's AA-Fire port (ASCII art flame).,bin,cli,x,x,x,x,x,x,x
+Media Extras & Fun,jp2a,N/A,bin,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,cockpit,Web-based system administration interface.,rpm,gui,x,x,x,x,x,x,x
+Storage Server & Virtualization,cockpit-zfs-manager,ZFS manager plugin for Cockpit.,bin,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,docker-buildx,Docker CLI plugin for extended build capabilities.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,docker-compose,Define and run multi-container applications.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,podman-compose,A script to run docker-compose.yml using Podman.,rpm,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,libvirt-client,Client-side utilities for libvirt (`virsh`).,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,daemon-kvm / libvirtd,Server side daemon for KVM virtualization.,rpm,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,virt-install,CLI tool to provision new virtual machines.,rpm,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,zfs,OpenZFS file system driver and utilities.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,Duperemove,Deduplication utility for Btrfs and XFS.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,samba,SMB/CIFS file server and client for Linux.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,mergerfs,Featureful union filesystem.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,nfs-utils,Network File System client and server utilities.,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,rclone,Rsync for cloud storage.,rpm,cli,x,x,x,x,x,x,x
+Storage Server & Virtualization,snapraid,Backup program for disk arrays (similar to RAID).,rpm,cli,x,x,x,x,x,x,
+Storage Server & Virtualization,sanoid,Policy-driven snapshot management tool for ZFS.,rpm,cli,x,x,x,x,x,x,
